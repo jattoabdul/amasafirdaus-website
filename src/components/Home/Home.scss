@@ -1,0 +1,15 @@
+@import '../../globals/styles/base';
+
+.Home {
+    font-family: "DINPro-Regular";
+    color: $andela-grey-text;
+    min-height: 100%;
+    margin: 0 0 -5rem 0;
+
+    &:after {
+        content: "";
+        display: block;
+        height: 5rem;
+    }
+
+}
