@@ -29,11 +29,11 @@ render(
             <Route
                 exact
                 path="/"
-                component={Login}
+                component={Home}
             />
             <Route
-                path="/dashboard"
-                component={Home}
+                path="/login"
+                component={Login}
             />
         </Switch>
         </Router>

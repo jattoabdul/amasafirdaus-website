@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Home.scss';
 import { Navigation } from '../Partials/Navigation';
-import { ModalContainer } from '../Partials/ModalContainer';
 import { Footer } from '../Partials/Footer';
 import { Pagination } from '../Partials/Pagination';
 import {
@@ -10,13 +9,9 @@ import {
     Input,
     Label
 } from 'reactstrap';
-// import {
-//     fetchGuest,
-//     createGuest,
-//     createGuestTag,
-//     handleUpdateGuestTimeOut,
-//     setSelectedLocation
-//   } from '../../actions/guestAction';
+import {
+    fetchBlogPeek
+  } from '../../actions/homeAction';
 
 class Home extends Component {
 
@@ -37,7 +32,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-    
+    fetchBlogPeek
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
