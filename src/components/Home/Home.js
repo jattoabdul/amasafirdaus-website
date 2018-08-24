@@ -5,6 +5,7 @@ import { Navigation } from '../Partials/Navigation';
 import { Footer } from '../Partials/Footer';
 import { Pagination } from '../Partials/Pagination';
 import firdauz from '../../assets/firdauz.jpg';
+import hijab from '../../assets/hijab.svg';
 import {
     InputGroup,
     Input,
@@ -49,11 +50,12 @@ class Home extends Component {
                                 Muslimah | Barrister | Writer
                             </p>
                             <h1 className="my-name">Firdaus <br/> <span>Amasa</span> </h1>
-                            <h4>Biikjk</h4>
+                            <h3 className="biography-heading">BIOGRAPHY</h3>
+                            <p className="biography-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dicta autem, quidem saepe officia mollitia, corporis rem aliquid nisi deserunt beatae est aliquam eos necessitatibus reprehenderit vel pariatur! Ad, modi.</p>
                         </Col>
                         <Col md="6">
                             <div className="my-picture-container">
-                                <img src={firdauz} alt="firdaus profile dp"/>
+                                <img src={hijab} alt="firdaus profile dp"/>
                             </div>
                             - picture & titles col 6 <br/>
                             picture <br/>
