@@ -4,7 +4,7 @@
   text-align: center;
   position: relative;
   height: 100vh;
-  background-color: $andela-blue;
+  // background-color: $andela-blue;
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
 
@@ -49,9 +49,9 @@
         opacity: 0.8;
         border-bottom-right-radius: 7px;
         border-top-right-radius: 7px;  
-        background-image: -moz-linear-gradient(45deg, $lighter-andela-blue 0%, $light-andela-blue 100%);
-        background-image: -webkit-linear-gradient(45deg, $lighter-andela-blue 0%, $light-andela-blue 100%);
-        background-image: -ms-linear-gradient(45deg, $lighter-andela-blue 0%, $light-andela-blue 100%);
+        // background-image: -moz-linear-gradient(45deg, $lighter-andela-blue 0%, $light-andela-blue 100%);
+        // background-image: -webkit-linear-gradient(45deg, $lighter-andela-blue 0%, $light-andela-blue 100%);
+        // background-image: -ms-linear-gradient(45deg, $lighter-andela-blue 0%, $light-andela-blue 100%);
       }
 
       .slider-panel {
@@ -86,7 +86,7 @@
   
           .login-content-panel {
             margin: 0 0 .5rem 0;
-            color: $andela-grey;
+            // color: $andela-grey;
   
             .App-logo {
               animation: App-logo-spin infinite 20s linear;

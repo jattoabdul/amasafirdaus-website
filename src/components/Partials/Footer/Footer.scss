@@ -1,31 +1,27 @@
 @import '../../../globals/styles/base';
 
 .Footer {
-    background-color: $andela-white;
+    background-color: $white;
     height: 5rem;
     overflow: hidden;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     padding: 1rem 1rem 0 1rem;
-    color: $andela-grey-text;
+    color: $black;
     margin-top: 1rem;
-    box-shadow: 10px -1px 1px 0px $andela-grey-text;
+    box-shadow: 10px -1px 1px 0px $black;
     z-index: 1;
+    color: $black;
 
     .footer-logo {
         display: inline-block;
         order: 0;
 
         .footer-logo-bg {
-            /* background-image: url("../../../assets/a-logo.png"); */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position-y: center;
-            width: 8rem;
-            height: 100%;
-            margin-left: 2rem;
-            line-height: 2rem;
+            padding: 0 0.4rem;
+            font-size: 1.5rem;
+            border: 1px solid $black;
 
             @include smm {
                 margin-left: 1rem;
@@ -34,9 +30,14 @@
         }
     }
 
-    .footer-copyright {
+    .footer-socials {
         display: inline-block;
         order: 1;
+    }
+
+    .footer-copyright {
+        display: inline-block;
+        order: 2;
         margin-right: 2rem;
         padding: 1rem;
         font-family: "DINPro-Light";

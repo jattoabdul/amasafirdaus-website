@@ -3,12 +3,10 @@ import {
     Navbar,
     NavbarToggler,
     NavbarBrand,
-    // Collapse,
-    // Nav,
-    // UncontrolledDropdown,
-    // DropdownToggle,
-    // DropdownMenu,
-    // DropdownItem
+    Collapse,
+    Nav,
+    NavItem,
+    NavLink
 } from 'reactstrap';
 import './Navigation.scss';
 
@@ -16,29 +14,24 @@ import './Navigation.scss';
 const Navigation = props => {
     return (
         <div className="Navigation">
-            <Navbar color="white" light expand="md">
+            <Navbar className="top-nav" light expand="md">
                 <NavbarBrand href="/">
-                    <div className="navigation-logo"></div>
+                    <div className="navigation-logo">Firdaus</div>
                 </NavbarBrand>
                 <NavbarToggler onClick={props.toggle} />
-                {/**<Collapse isOpen={props.isOpen} navbar>
+                <Collapse isOpen={props.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                <span className="avatar"><img src="http://via.placeholder.com/50x50" className="rounded" alt="user avatar"/></span> Aminujatto Abdulqahhar
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                            <DropdownItem>
-                                Guest History
-                            </DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>
-                                Log Out
-                            </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
+                        <NavItem>
+                            <NavLink href="/">Amasa Firdaus</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/blog">Blog & Stories</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/contact">Contact Me</NavLink>
+                        </NavItem>
                     </Nav>
-    </Collapse>**/}
+                </Collapse>
             </Navbar>
         </div>
     );
