@@ -51,16 +51,22 @@ class Home extends Component {
                             </p>
                             <h1 className="my-name">Firdaus <br/> <span>Amasa</span> </h1>
                             <h3 className="biography-heading">BIOGRAPHY</h3>
-                            <p className="biography-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dicta autem, quidem saepe officia mollitia, corporis rem aliquid nisi deserunt beatae est aliquam eos necessitatibus reprehenderit vel pariatur! Ad, modi.</p>
+                            <p className="biography-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dicta autem, quidem saepe officia mollitia, corporis rem aliquid nisi deserunt beatae est aliquam eos necessitatibus reprehenderit vel pariatur! Ad, modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                            <p className="biography-text">Tempore rem voluptatem distinctio natus pariatur, ea minima totam. Provident, recusandae quod. Ullam ut sunt quis numquam dolorem, magnam delectus ducimus non.</p>
                         </Col>
                         <Col md="6">
                             <div className="my-picture-container">
                                 <img src={hijab} alt="firdaus profile dp"/>
                             </div>
-                            - picture & titles col 6 <br/>
-                            picture <br/>
-                            numbered links - titles
+                            <ul className="numbered-links">
+                                <li><span className="link-number">01</span><span className="link-name">Biography</span></li>
+                                <li><span className="link-number">02</span><span className="link-name">Biography</span></li>
+                                <li><span className="link-number">03</span><span className="link-name">Biography</span></li>
+                                <li><span className="link-number">04</span><span className="link-name">Biography</span></li>
+                                <li><span className="link-number">05</span><span className="link-name">Biography</span></li>
+                            </ul>
                         </Col>
+                        <p className="section-info">ABOUT ME</p>
                     </Row>
                 </section>
                 <section>
