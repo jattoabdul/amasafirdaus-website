@@ -12,6 +12,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import './index.scss';
 import { Login } from './components/Auth';
 import { Home } from './components/Home';
+import { Contact } from './components/Contact';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css'; 
@@ -30,6 +31,10 @@ render(
                 exact
                 path="/"
                 component={Home}
+            />
+            <Route
+                path="/contact"
+                component={Contact}
             />
             <Route
                 path="/login"
