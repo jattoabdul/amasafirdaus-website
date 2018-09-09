@@ -4,8 +4,9 @@ import './Home.scss';
 import { Navigation } from '../Partials/Navigation';
 import { Footer } from '../Partials/Footer';
 import { Pagination } from '../Partials/Pagination';
-import firdauz from '../../assets/firdauz.jpg';
 import hijab from '../../assets/hijab.svg';
+import lawBook from '../../assets/law_book.jpeg';
+import full_bloom from '../../assets/full-bloom.png';
 import {
     InputGroup,
     Input,
@@ -59,7 +60,7 @@ class Home extends Component {
                                 <img src={hijab} alt="firdaus profile dp"/>
                             </div>
                             <ul className="numbered-links">
-                                <li><span className="link-number">01</span><span className="link-name">Biography</span></li>
+                                <li><span className="link-number">01</span><span className="link-name active">Biography</span></li>
                                 <li><span className="link-number">02</span><span className="link-name">Biography</span></li>
                                 <li><span className="link-number">03</span><span className="link-name">Biography</span></li>
                                 <li><span className="link-number">04</span><span className="link-name">Biography</span></li>
@@ -69,11 +70,41 @@ class Home extends Component {
                         <p className="section-info">ABOUT ME</p>
                     </Row>
                 </section>
-                <section>
-                    3rd section - blog peek section (row)
-                    <div>
-                        col 12
-                    </div>
+                <section className="blog-peek-section">
+                    <p className="section-info">BLOG PEEK</p>
+                    <Row className="blog-peek">
+                        <div className="container">
+                        <Col md={{size: 7, offset: 5}}>
+                            {/* add active-box when a .cat is hovered! */}
+                            <div className="peek-box">
+                                <ul className="cats">
+                                    <li className="cat">Literature</li>
+                                    <li className="cat active">Thoughts</li>
+                                    <li className="cat">African HIstory</li>
+                                    <li className="cat">Human Rights</li>
+                                    <li className="cat">Islam &amp; Muslims</li>
+                                </ul>
+                                <Row className="peeks">
+                                    <Col md="6" className="peek">
+                                        <img className="peek-image" src={lawBook} alt=""/>
+                                        <h4 className="peek-text">My thoughts on sleeping alone on the couch without insurance</h4>
+                                        <p className="peek-sneak">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maxime eligendi...</p>
+                                        <p className="peek-post-time">12<sup>th</sup> AUG, 2018</p>
+                                        <span className="more">read more</span>
+                                    </Col>
+                                    <Col md="6" className="peek">
+                                        <img className="peek-image" src={lawBook} alt=""/>
+                                        <h4 className="peek-text">Some elements of our culture may be wrong, but our approach to fix it may be wrong as well</h4>
+                                        <p className="peek-sneak">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maxime eligendi...</p>
+                                        <p className="peek-post-time">15<sup>th</sup> SEPT, 2018</p>
+                                        <span className="more">read more</span>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                        </div>
+                    </Row>
+                    <a className="visit-blog" href="/blog">Visit Blog</a>
                 </section>
             </div>,
             <Footer />

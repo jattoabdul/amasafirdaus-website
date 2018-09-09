@@ -12,10 +12,6 @@
     }
     header {
         height: 75vh;
-        // max-height: 30rem;
-        // background:
-        //     url('../../assets/full-bloom.png') repeat,
-        //     $pink;
         background-image: url('../../assets/full-bloom.png');
         background-repeat: repeat;
         background-blend-mode: multiply;
@@ -133,6 +129,186 @@
             letter-spacing: 2px;
             font-size: 1.4rem;
             font-weight: 300;
+        }
+    }
+
+    .blog-peek-section {
+        position: relative;
+        padding: 15vh 0;
+
+        .section-info {
+            position: absolute;
+            left: 0rem;
+            top: 40%;
+            transform: rotate(-90deg);
+            letter-spacing: 2px;
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        .peek-box {
+            width: 100%;
+            min-height: 25rem;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+            position: relative;
+            &, * {
+                transition: all ease-in-out .3s;
+            }
+            
+            &.active-box {border: 1px solid $pink;}
+
+            .cats {
+                position: absolute;
+                left: -30vw;
+                display: flex;
+                flex-direction: column;
+                height: 25rem;
+                justify-content: space-evenly;
+                li.cat {
+                    list-style: none;
+                    text-align: left;
+                    border: 1px solid;
+                    padding: 10px 1rem;
+                    border-radius: 4px;
+                    text-transform: uppercase;
+                    position: relative;
+                    cursor: pointer;
+
+                    &.active {
+                        border-width: 1px;
+                    }
+
+                    &:hover {
+                        color: $pink;
+                    }
+
+                    &.active, &:hover {
+                        border-color: $pink;
+                        
+                        &:after {
+                            height: 0px;
+                        }
+
+                        &:before {
+                            width: 125%;
+                            background: $pink;
+                        }
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 12vw;
+                        top: 50%;
+                        height: 1px;
+                        width: 125%;
+                        background: #E0E0E0;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 12vw;
+                        top: 50%;
+                        height: 2px;
+                        width: 0;
+                        transition: all ease-in-out .3s;
+                        background: #E0E0E0;
+                    }
+                }
+            }
+
+            &:after {
+                height: 100%;
+                width: 1px;
+                background: #E0E0E0;
+                content: '';
+                position: absolute;
+                left: 49.8%;
+                top: 0;
+            }
+
+            .peeks {
+                padding: 1rem;
+                position: relative;
+
+                .peek {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    .peek-image {
+                        height: 10rem;
+                        width: 100%;
+                        object-fit: cover;
+                        margin-bottom: 0.8rem;
+                        filter: grayscale(1);
+
+                        &:hover {
+                            filter: grayscale(0);
+                        }
+                    }
+                    .peek-text {
+                        font-size: 1rem;
+                        text-align: center;
+                        font-weight: 500;
+                        font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        line-height: 1.5;
+                    }
+                    .peek-sneak {
+                        font-size: 0.9rem;
+                        font-weight: 200;
+                        text-align: center;
+                    }
+                    .peek-post-time {
+                        font-size: 0.8rem;
+                        color: grey;
+                        text-align: center;
+                        font-style: italic;
+                        font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    }
+                    .more {
+                        display: block;
+                        text-align: right;
+                        font-weight: 100;
+                        position: relative;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $pink;
+                            &:after {
+                                background: $pink;
+                            }
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            background: #E0E0E0;
+                            right: 0;
+                            width: 4.5rem;
+                            height: 1px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .visit-blog {
+            padding: 0.5rem 1rem;
+            border: 1px solid;
+            border-radius: 4px;
+            margin: 5rem auto 0;
+            display: block;
+            color: $pink;
+            width: fit-content;
+            transition: all ease-in-out .4s;
+            box-sizing: border-box;
+
+            &:hover {
+                text-decoration: none;
+                border: 2px solid;
+            }
         }
     }
 }
