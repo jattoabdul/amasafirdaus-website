@@ -5,7 +5,6 @@ import {
         Form,
         FormGroup,
         Input,
-        Label,
         Button,
         Container,
         Row,
@@ -41,7 +40,7 @@ const Footer = props => {
                         </ul>
                     </Col>
                     <Col md="3" className="subscribe">
-                        <p>Don&rsquo;t miss out on my latest updates 😊</p>
+                        <p>Don&rsquo;t miss out on my latest updates <span role="img" aria-label="smile">😊</span></p>
                         <Form>
                             <FormGroup>
                                 <InputGroup>

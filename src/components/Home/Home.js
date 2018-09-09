@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import './Home.scss';
 import { Navigation } from '../Partials/Navigation';
 import { Footer } from '../Partials/Footer';
-import { Pagination } from '../Partials/Pagination';
+// import { Pagination } from '../Partials/Pagination';
 import hijab from '../../assets/hijab.svg';
 import lawBook from '../../assets/law_book.jpeg';
-import full_bloom from '../../assets/full-bloom.png';
+// import full_bloom from '../../assets/full-bloom.png';
 import {
-    InputGroup,
-    Input,
-    Label,
-    Container,
+    // InputGroup,
+    // Input,
+    // Label,
+    // Container,
     Row,
     Col
 } from 'reactstrap';
