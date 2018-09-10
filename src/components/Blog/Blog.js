@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './Blog.scss';
 import { BlogNavigation } from '../Partials/BlogNavigation';
 import { Footer } from '../Partials/Footer';
-import hallWay from '../../assets/hallWay.jpeg'
+import roughPic from '../../assets/rough.jpeg'
 import {
     InputGroup,
     Label,
@@ -63,11 +63,26 @@ class Blog extends Component {
                             <option value="all">All</option>
                             </Input>
                         </InputGroup>
+                        <InputGroup className="search-filter">
+                            <Label for="search">Search</Label>
+                            <Input className="search-input" placeholder="search" name="search" id="search" />
+                        </InputGroup>
                     </div>
                     <div className="blog-posts-list-container">
                         {[...Array(30).keys()].map(() => 
                             <div className="blog-post">
-                                <img src={hallWay} alt="Hall Way"/>
+                                <div className="blog-content">
+                                    <h4 className="post-title">Wireframing and Prototyping: Present Past and Future</h4>
+                                    <p>
+                                        <span className="post-category">Design &amp; UI</span>
+                                        <span className="post-time">April 16, 2000</span>
+                                    </p>
+                                    <p className="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere id. Dignissimos odit esse quisquam sint accusamus quod molestiae ad corrupti neque laboriosam culpa architecto commodi, optio illo temporibus reprehenderit</p>
+                                    <a href="/blog/content" className="more-content">read more</a>
+                                </div>
+                                <div className="blog-pic">
+                                    <img src={roughPic} alt="Rough"/>
+                                </div>
                             </div>
                         )}
                     </div>

@@ -27,7 +27,8 @@ const Footer = props => {
                         <p className="titles">Muslimah | Barrister | Writer</p>
                         <p className="contacts">
                             <span>me@firdausamasa.com</span>
-                            <span>firdausamasa@gmail.com</span>
+                            <span>Jannahfir@gmail.com</span>
+                            <span>amasafirdausa@gmail.com</span>
                         </p>
                     </Col>
                     <Col md="3">

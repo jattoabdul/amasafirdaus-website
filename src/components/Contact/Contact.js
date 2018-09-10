@@ -105,7 +105,7 @@ class Contact extends Component {
                                 <div className="contact-info">
                                     <h4>Contact Information</h4>
                                     <p className="contact-detail"><span role="img" aria-label="email">📧</span> Jannahfir@gmail.com</p>
-                                    <p className="contact-detail"><span role="img" aria-label="email">📧</span> amasafirdausa@mail.com</p>
+                                    <p className="contact-detail"><span role="img" aria-label="email">📧</span> amasafirdausa@gmail.com</p>
                                     <p className="contact-detail"><span role="img" aria-label="phone">📞</span> (+234) 816 274 0850</p>
                                     <ul className="socials">
                                         <li><a><img src={facebookSVG} alt="facebook" /></a></li>
