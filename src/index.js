@@ -13,6 +13,7 @@ import './index.scss';
 import { Login } from './components/Auth';
 import { Home } from './components/Home';
 import { Contact } from './components/Contact';
+import { BlogContainer } from './components/Blog';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css'; 
@@ -39,6 +40,10 @@ render(
             <Route
                 path="/login"
                 component={Login}
+            />
+            <Route
+                path="/blog"
+                component={BlogContainer}
             />
         </Switch>
         </Router>

@@ -1,0 +1,44 @@
+@import '../../../globals/styles/base';
+
+.BlogNavigation {
+    color: $white;
+    .top-nav {
+        width: 95%;
+        margin: auto;
+        padding-top: 1.5rem;
+        background: transparent;
+        .navigation-logo {
+            display: inline-block;
+            padding: 0 0.4rem;
+            font-size: 1.5rem;
+            color: $pink;
+            border: 1px solid $pink;
+    
+            @include smm {
+                margin-bottom: 1rem;
+            }
+    
+        }
+        li.nav-item {
+            margin-left: 1.2rem;
+            .nav-link {
+                color: $pink;
+            }
+    
+            @include smm {
+                margin-left: 0;
+                margin-top: 1.2rem
+            }
+        }
+        .dropdown-divider {
+            @include smm {
+                border-top: 1px solid $white;
+            }
+        }
+        .dropdown-menu {
+            @include smm {
+                border: 1px solid $white;
+            }
+        }
+    }
+}

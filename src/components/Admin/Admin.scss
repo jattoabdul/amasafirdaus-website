@@ -1,0 +1,23 @@
+@import '../../globals/styles/base';
+
+.Admin {
+    color: $black;
+    min-height: 100%;
+    margin: 0 0 -5rem 0;
+
+    &:after {
+        content: "";
+        display: block;
+        height: 5rem;
+    }
+    header {
+        height: 80vh;
+        min-height: 30rem;
+        // background: url('../../assets/contact-icons.png') right center no-repeat, url('../../assets/full-bloom.png') left top repeat;
+        // background-blend-mode: multiply;
+        background-color: $pink;
+
+    }
+
+}
+
