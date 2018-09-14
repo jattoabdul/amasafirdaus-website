@@ -47,8 +47,6 @@ class SingleBlog extends Component {
                     />
                 </header>
                 <section className="single-blog-post">
-                    <div className="guide-lines"></div>
-
                     <div className="share">
                         <h4 className="heading">Share</h4>
                         <img className="social-share" src={facebookCircular} alt="share to facebook"/>

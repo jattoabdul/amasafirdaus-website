@@ -2,7 +2,7 @@
 
 .SingleBlog {
     color: $black;
-    min-height: 100%;
+    flex: 1 0 auto;
     margin: 0 0 -5rem 0;
 
     &:after {
@@ -24,42 +24,13 @@
         margin: 2rem auto;
         min-width: 65rem;
         position: relative;
-        
-
-        .guide-lines {
-            position: fixed;
-            width: 1px;
-            height: 100vh;
-            top: 0;
-            background: #ea526f38;
-            left: calc(50% - 1px/2);
-
-            &:before {
-                position: fixed;
-                content: '';
-                width: 1px;
-                height: 100vh;
-                top: 0;
-                background: #ea526f38;
-                left: 14%;
-            }
-
-            &:after {
-                position: fixed;
-                content: '';
-                width: 1px;
-                height: 100vh;
-                top: 0;
-                background: #ea526f38;
-                right: 14%;
-            }
-        }
 
         .share {
-            position: absolute;
+            position: sticky;
             width: 5rem;
             left: -10vw;
             top: 30vh;
+            margin-left: -10rem;
 
             .heading {
                 font-size: 0.85rem;

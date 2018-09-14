@@ -22,7 +22,7 @@ const Footer = props => {
         <footer className="Footer">
             <Container className="footer-container">
                 <Row>
-                    <Col md="3" className="main">
+                    <Col xs="12" sm="6" md="4" lg="3" className="main">
                         <span className="brand-logo">Firdaus</span>
                         <p className="titles">Muslimah | Barrister | Writer</p>
                         <p className="contacts">
@@ -31,8 +31,8 @@ const Footer = props => {
                             <span>amasafirdausa@gmail.com</span>
                         </p>
                     </Col>
-                    <Col md="3">
-                        <h4 className="column-heading"><span>Links</span></h4>
+                    <Col xs="12" sm="6" md="3" lg="3" className="quick-links">
+                        <h4 className="column-heading"><span>Quick Links</span></h4>
                         <ul className="links">
                             <li className="link"><a href="#blog">Blog</a></li>
                             <li className="link"><a href="#blog">Contact</a></li>
@@ -40,9 +40,9 @@ const Footer = props => {
                             <li className="link"><a href="#blog">Contact</a></li>
                         </ul>
                     </Col>
-                    <Col md="3" className="subscribe">
+                    <Col xs="12" sm="6" md="5" lg="3" className="subscribe">
                         <p>Don&rsquo;t miss out on my latest updates <span role="img" aria-label="smile">😊</span></p>
-                        <Form>
+                        <Form className="subscribe-form">
                             <FormGroup>
                                 <InputGroup>
                                     <Input placeholder="email" type="email" className="subscribe-input" required />
@@ -56,7 +56,7 @@ const Footer = props => {
                             <li><a><img src={twitterSVG} alt="" /></a></li>
                         </ul>
                     </Col>
-                    <Col md="3">
+                    <Col xs="12" sm="6" md="4" lg="3" className="hijab-on-footer">
                         <img src={hijabFooter} alt="hijab" className="hijab" />
                     </Col>
                 </Row>

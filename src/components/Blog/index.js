@@ -34,9 +34,7 @@ export class BlogContainer extends Component {
 
     render() {
         return (
-            <div className="BlogContainer">
-                <BlogRoutes {...this.props} {...this.state} />
-            </div>
+            <BlogRoutes {...this.props} {...this.state} />
         );
     }
 }

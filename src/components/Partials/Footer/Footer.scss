@@ -3,9 +3,15 @@
 .Footer {
     background: $cream;
     padding: 4rem 0 0;
+    flex-shrink: 0;
+
     .footer-container {
         min-width: 95%;
         font-weight: 200;
+
+        p {
+            margin-bottom: -0.3rem;
+        }
         
         .main {
             .brand-logo {
@@ -16,66 +22,120 @@
                 border: 1px solid $pink;
         
                 @include smm {
-                    margin-bottom: 1rem;
+                    font-size: 2rem;
                 }
             }
     
             .titles {
                 line-height: 3;
+
+                @include smm {
+                    font-size: 1.6rem;
+                }
             }
 
             .contacts {
-                font-style: italic;
                 font-size: 0.85rem;
                 span {
                     display: block;
                 }
+
+                @include smm {
+                    font-size: 1.2rem;
+                }
+            }
+
+            @include smm {
+                text-align: center;
+                margin-bottom: 1rem;
             }
         }
 
-        .column-heading {
-            font-size: 1.1rem;
-            color: $pink;
-            text-transform: uppercase;
-            
-            span {
-                position: relative;
-                padding-bottom: 0.2rem;
-            }
+        .quick-links {
 
-            &:hover span:before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                bottom: 0;
-                right: 0;
-                background: $pink;
-            }
-        }
-
-        .links {
-            padding-left: 0;
-            margin-top: 0.5rem;
-
-            .link {
-                list-style: none;
-                line-height: 1.8;
+            .column-heading {
+                font-size: 1.1rem;
+                color: $pink;
                 text-transform: uppercase;
-                font-weight: 400;
+                
+                span {
+                    position: relative;
+                    padding-bottom: 0.2rem;
+                }
+    
+                &:hover span:before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    right: 0;
+                    background: $pink;
+                }
 
-                a {
-                    text-decoration: none;
-                    color: $black;
-
-                    &:hover {
-                        color: $pink;
+                @include smm {
+                    font-size: 1.6rem;
+                }
+            }
+    
+            .links {
+                padding-left: 0;
+                margin-top: 1rem;
+    
+                .link {
+                    list-style: none;
+                    line-height: 1.8;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    cursor: pointer;
+    
+                    a {
+                        text-decoration: none;
+                        color: $black;
+                        cursor: pointer;
+    
+                        &:hover {
+                            color: $pink;
+                        }
+                    }
+                    @include smm {
+                        max-width: 6.5rem;
                     }
                 }
+
+                @include smm {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding: 0 1rem;
+                }
+            }
+
+            @include smm {
+                text-align: center;
+                margin-top: 1.5rem;
+                font-size: 1.2rem;
             }
         }
 
         .subscribe {
+            p:first-child {
+                margin-bottom: 1rem;
+
+                @include smm {
+                    font-size: 1.5rem !important;
+                }
+
+                @include mdm {
+                    font-size: 1rem;
+                }
+            }
+
+            .subscribe-form {
+                margin-bottom: 1.3rem;
+            }
+
             .subscribe-input {
                 outline: 0 solid;
                 border: 1px solid $pink;
@@ -83,6 +143,10 @@
                 &:focus {
                     outline: none;
                     box-shadow: 0 0 0 0.15rem rgba(234, 82, 111, .25)
+                }
+                
+                @include smm {
+                    height: 3.3rem;
                 }
             }
             .subscribe-btn {
@@ -94,7 +158,7 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                width: 70%;
+                width: 50%;
                 padding-left: 0;
                 
                 li {
@@ -105,17 +169,47 @@
 
                         img {
                             width: 2.5rem;
+                            
+                            @include smm {
+                                width: 3.5rem;
+                            }
                         }
                     }
                 }
+
+                @include smm {
+                    margin: 1rem 0rem 1rem 5.5rem;
+                }
+
+                @include mdm {
+                    width: 60%;
+                }
+            }
+
+            @include smm {
+                text-align: center;
             }
         }
 
-        .hijab {
-            width: 70%;
-            margin-top: -2rem;
-            float: right;
-            min-width: 14rem;
+        .hijab-on-footer {
+            .hijab {
+                width: 70%;
+                margin-top: -2rem;
+                float: right;
+                min-width: 14rem;
+            }
+
+            @include mdm {
+                display: none;
+            }
+
+            @include smm {
+                margin: 1rem 0rem -4rem -4rem;
+
+                .hijab {
+                    object-fit: scale-down;
+                }
+            }
         }
     }
     .footer-copyright {
@@ -133,6 +227,19 @@
                     text-decoration: none;
                 }
             }
+        }
+
+        @include smm {
+            text-align: center;
+
+            .by {
+                float: none;
+                display: inline-block;
+            }
+        }
+
+        @include mdm {
+            padding: 1.1rem 5% 1rem;
         }
     }
 }
