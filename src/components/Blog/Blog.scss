@@ -18,7 +18,6 @@
     .blog-posts {
         width: 70%;
         margin: 2rem auto;
-        min-width: 65rem;
         background-color: $offwhite;
 
         .blog-posts-filters {
@@ -37,8 +36,17 @@
                     box-shadow: 0 0;
                 }
             }
-                
 
+            @include smm {
+                justify-content: flex-start;
+                flex-direction: column-reverse;
+            }
+
+            @include mdm {
+                justify-content: flex-start;
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
 
             .category-filter {
                 width: 14rem;
@@ -49,12 +57,19 @@
                     -webkit-appearance: none;
                     -moz-appearance: none;
                     appearance: none;
-                    background: url(../../assets/hijabPink.svg) 96% / 16% no-repeat $offwhite;
-                    // background: url(../../assets/play-button-down-pink.svg) 96% / 5% no-repeat $greyscale;
+                    background: url(../../assets/play-button-down-pink.svg) 94% / 12% no-repeat $offwhite;
+
+                    @include smm {
+                        background: url(../../assets/play-button-down-pink.svg) 96% / 5% no-repeat $offwhite;
+                    }
     
                     &::-ms-expand { 
                         display: none; /* remove default arrow on ie10 & ie11 */
                     }
+                }
+
+                @include smm {
+                    width: 20rem;
                 }
             }
 
@@ -62,13 +77,16 @@
                 width: 10.5rem;
                 margin-left: 1rem;
 
+                @include smm {
+                    display: none;
+                }
+
                 select.select-elem {
                     border: 1px solid $greymain;
                     -webkit-appearance: none;
                     -moz-appearance: none;
                     appearance: none;
-                    background: url(../../assets/hijabPink.svg) 90% / 30% no-repeat $offwhite;
-                    // background: url(../../assets/play-button-down-pink.svg) 90% / 19% no-repeat $greyscale;
+                    background: url(../../assets/play-button-down-pink.svg) 90% / 20% no-repeat $offwhite;
     
                     &::-ms-expand { 
                         display: none; /* remove default arrow on ie10 & ie11 */
@@ -86,7 +104,28 @@
                     -webkit-appearance: none;
                     -moz-appearance: none;
                     appearance: none;
-                    background: url(../../assets/hijabPink.svg) 98% / 10% no-repeat $offwhite;
+                    background: url(../../assets/search-pink.svg) 96% / 7% no-repeat $offwhite;
+
+                    @include smm {
+                        border: none;
+                        background: url(../../assets/search-pink.svg) 98% / 6% no-repeat $greyscale;
+                        // background: url(../../assets/search.svg) 98% / 2% no-repeat $greyscale;
+                        color: $black;
+
+                        &::placeholder {
+                            color: $black;
+                        }
+                    }
+                }
+
+                @include smm {
+                    margin-bottom: 1rem;
+                    margin-left: 0;
+                    width: 100%;
+
+                    label {
+                        display: none;
+                    }
                 }
             }
 
@@ -95,18 +134,24 @@
         .blog-posts-list-container {
             .blog-post {
                 margin-bottom: 2rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
                 display: flex;
+                justify-content: space-between;
                 
                 .blog-content {
-                    align-self: flex-start;
-                    padding: 2rem;
                     display: flex;
-                    height: 300px;
                     flex-direction: column;
+                    flex-basis: 60%;
                     justify-content: space-between;
 
                     .post-title {
                         cursor: pointer;
+                        font-size: 1.5rem;
+
+                        @include mdm {
+                            font-size: 1.2rem;
+                        }
                     }
                     .post-category {
                         color: $cyan;
@@ -118,23 +163,57 @@
                         color: grey;
                         padding-top: 0.5rem;
                     }
-                    .post-content {}
+                    .post-content {
+                        @include multiLineEllipsis($lineHeight: 1.5em, $lineCount: 3, $bgColor: white); 
+                    }
                     .more-content {
                         text-transform: uppercase;
                         font-size: 0.9rem;
                         font-weight: 500;
                         color: $cyan;
                     }
+
+                    @include mdm {
+                        flex-basis: 55%;
+                    }
                 }
                 .blog-pic {
-                    align-self: flex-end;
-                    // box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+                    flex-basis: 30%;
+                    align-self: center;
+
+                    @include mdm {
+                        flex-basis: 40%;
+                    }
+
+                    @include smm {
+                        padding-bottom: 1rem;
+                    }
+                }
+
+                @include smm {
+                    flex-direction: column-reverse;
+                    border: 1px solid $greyscale;
+                    margin: 1rem;
+                    padding: 10px;
+                }
+
+                @include mdm {
+                    border: 1px solid $greyscale;
+                    margin: 1rem;
+                    padding: 10px;
                 }
             }
         }
 
+        @include mdm {
+            width: 100%;
+        }
     }
 
+}
+
+img {
+    max-width: 100%;                        
 }
 
 @media screen and (min-width:0\0) {

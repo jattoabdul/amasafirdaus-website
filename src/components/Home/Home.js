@@ -46,25 +46,33 @@ class Home extends Component {
                 </header>
                 <section className="me">
                     <Row className="jump1">
-                        <Col md="6">
+                        <Col md="6" xs="12" sm="6" className="about-item-content">
+                            <img className="mobile-head-hijab" src={hijab} alt="firdaus amasa profile dp"/>
                             <p className="flow-text professional-titles">
                                 Muslimah | Barrister | Writer
                             </p>
                             <h1 className="my-name">Firdaus <br/> <span>Amasa</span> </h1>
-                            <h3 className="biography-heading">BIOGRAPHY</h3>
-                            <p className="biography-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dicta autem, quidem saepe officia mollitia, corporis rem aliquid nisi deserunt beatae est aliquam eos necessitatibus reprehenderit vel pariatur! Ad, modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                            <p className="biography-text">Tempore rem voluptatem distinctio natus pariatur, ea minima totam. Provident, recusandae quod. Ullam ut sunt quis numquam dolorem, magnam delectus ducimus non.</p>
+                            <div className="about-content-wrapper biography active">
+                                <h3 className="biography-heading">BIOGRAPHY</h3>
+                                <p className="biography-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dicta autem, quidem saepe officia mollitia, corporis rem aliquid nisi deserunt beatae est aliquam eos necessitatibus reprehenderit vel pariatur! Ad, modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <p className="biography-text">Tempore rem voluptatem distinctio natus pariatur, ea minima totam. Provident, recusandae quod. Ullam ut sunt quis numquam dolorem, magnam delectus ducimus non.</p>
+                            </div>
+                            <div className="about-content-wrapper next-content">
+                                <h3 className="biography-heading">Next Content</h3>
+                                <p className="biography-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dicta autem, quidem saepe officia mollitia, corporis rem aliquid nisi deserunt beatae est aliquam eos necessitatibus reprehenderit vel pariatur! Ad, modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <p className="biography-text">Tempore rem voluptatem distinctio natus pariatur, ea minima totam. Provident, recusandae quod. Ullam ut sunt quis numquam dolorem, magnam delectus ducimus non.</p>
+                            </div>
                         </Col>
-                        <Col md="6">
+                        <Col md="6" xs="12" sm="6" className="about-item-menu">
                             <div className="my-picture-container">
                                 <img src={hijab} alt="firdaus profile dp"/>
                             </div>
                             <ul className="numbered-links">
                                 <li><span className="link-number">01</span><span className="link-name active">Biography</span></li>
-                                <li><span className="link-number">02</span><span className="link-name">Biography</span></li>
-                                <li><span className="link-number">03</span><span className="link-name">Biography</span></li>
-                                <li><span className="link-number">04</span><span className="link-name">Biography</span></li>
-                                <li><span className="link-number">05</span><span className="link-name">Biography</span></li>
+                                <li><span className="link-number">02</span><span className="link-name">Next Content</span></li>
+                                <li><span className="link-number">03</span><span className="link-name">Other Content</span></li>
+                                <li><span className="link-number">04</span><span className="link-name">Other Content</span></li>
+                                <li><span className="link-number">05</span><span className="link-name">Other Content</span></li>
                             </ul>
                         </Col>
                         <p className="section-info">ABOUT ME</p>
@@ -72,38 +80,45 @@ class Home extends Component {
                 </section>
                 <section className="blog-peek-section">
                     <p className="section-info">BLOG PEEK</p>
-                    <Row className="blog-peek">
-                        <div className="container">
-                        <Col md={{size: 7, offset: 5}}>
-                            {/* add active-box when a .cat is hovered! */}
-                            <div className="peek-box">
-                                <ul className="cats">
-                                    <li className="cat">Literature</li>
-                                    <li className="cat active">Thoughts</li>
-                                    <li className="cat">African HIstory</li>
-                                    <li className="cat">Human Rights</li>
-                                    <li className="cat">Islam &amp; Muslims</li>
-                                </ul>
-                                <Row className="peeks">
-                                    <Col md="6" className="peek">
-                                        <img className="peek-image" src={lawBook} alt=""/>
-                                        <h4 className="peek-text">My thoughts on sleeping alone on the couch without insurance</h4>
-                                        <p className="peek-sneak">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maxime eligendi...</p>
-                                        <p className="peek-post-time">12<sup>th</sup> AUG, 2018</p>
-                                        <span className="more">read more</span>
-                                    </Col>
-                                    <Col md="6" className="peek">
-                                        <img className="peek-image" src={lawBook} alt=""/>
-                                        <h4 className="peek-text">Some elements of our culture may be wrong, but our approach to fix it may be wrong as well</h4>
-                                        <p className="peek-sneak">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maxime eligendi...</p>
-                                        <p className="peek-post-time">15<sup>th</sup> SEPT, 2018</p>
-                                        <span className="more">read more</span>
-                                    </Col>
-                                </Row>
-                            </div>
-                        </Col>
+                    <div className="blog-peek-categories">
+                        <ul className="cats">
+                            <li className="cats__item active">Literature</li>
+                            <li className="cats__item">Thoughts</li>
+                            <li className="cats__item">African HIstory</li>
+                            <li className="cats__item">Human Rights</li>
+                            <li className="cats__item">Islam &amp; Muslims</li>
+                        </ul>
+                    </div>
+                    <div className="blog-peek-category-posts">
+                        <div className="blog-peek-category__post">
+                            <img className="peek-image" src={lawBook} alt=""/>
+                            <h4 className="peek-text">My thoughts on sleeping alone on the couch without insurance</h4>
+                            <p className="peek-sneak">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maxime eligendi...</p>
+                            <p className="peek-post-time">12<sup>th</sup> AUG, 2018</p>
+                            <span className="more">Read more</span>
                         </div>
-                    </Row>
+                        <div className="blog-peek-category__post">
+                            <img className="peek-image" src={lawBook} alt=""/>
+                            <h4 className="peek-text">My thoughts on sleeping alone on the couch without insurance</h4>
+                            <p className="peek-sneak">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maxime eligendi...</p>
+                            <p className="peek-post-time">12<sup>th</sup> AUG, 2018</p>
+                            <span className="more">Read more</span>
+                        </div>
+                        <div className="blog-peek-category__post">
+                            <img className="peek-image" src={lawBook} alt=""/>
+                            <h4 className="peek-text">My thoughts on sleeping alone on the couch without insurance</h4>
+                            <p className="peek-sneak">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maxime eligendi...</p>
+                            <p className="peek-post-time">12<sup>th</sup> AUG, 2018</p>
+                            <span className="more">Read more</span>
+                        </div>
+                        <div className="blog-peek-category__post">
+                            <img className="peek-image" src={lawBook} alt=""/>
+                            <h4 className="peek-text">My thoughts on sleeping alone on the couch without insurance</h4>
+                            <p className="peek-sneak">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maxime eligendi...</p>
+                            <p className="peek-post-time">12<sup>th</sup> AUG, 2018</p>
+                            <span className="more">Read more</span>
+                        </div>
+                    </div>
                     <a className="visit-blog" href="/blog">Visit Blog</a>
                 </section>
             </div>,

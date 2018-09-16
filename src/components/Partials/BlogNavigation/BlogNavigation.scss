@@ -28,7 +28,25 @@
                             background: $pink;
                         }
                     }
+
+                    @include smm {
+                        padding-left: 1rem;
+                    }
                 }
+            }
+
+            @include smm {
+                width: 100%;
+                background: $pink-fade;
+            }
+        }
+
+        .navbar-toggler {
+            color: $white;
+
+            &:hover {
+                outline: none;
+                box-shadow: none;
             }
         }
 
@@ -38,6 +56,11 @@
             font-size: 1.5rem;
             color: $pink;
             border: 1px solid $pink;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
     
             @include smm {
                 margin-bottom: 1rem;
@@ -61,6 +84,12 @@
                     bottom: 0;
                     right: 0;
                     background: $pink;
+                }
+            }
+
+            @include smm {
+                .nav-link {
+                    color: $white !important;
                 }
             }
     

@@ -20,3 +20,8 @@ body {
   font-family: 'Hind', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   height: 100%;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}

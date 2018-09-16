@@ -34,7 +34,20 @@
                             background: $white;
                         }
                     }
+
+                    @include smm {
+                        padding-left: 1rem;
+                    }
                 }
+            }
+
+            @include smm {
+                position: absolute;
+                top: 6rem;
+                right: 0rem;
+                width: 100%;
+                background: $head-bg-color;
+                z-index: 2;
             }
         }
 

@@ -16,119 +16,218 @@
         background-repeat: repeat;
         background-blend-mode: multiply;
         background-color: $pink;
-    }
-    .jump1 {
-        margin: -15.5rem auto 0;
-        width: 90%;
-        .professional-titles {
-            color: white;
-            font-size: 1.5rem;
-            letter-spacing: 0.1rem;
-            word-spacing: 0.5rem;
-            position: relative;
-            &::before {
-                content: ' ';
-                position: absolute;
-                top: -1rem;
-                left: 0;
-                width: 10rem;
-                height: 2px;
-                background: $black;
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                top: -0.7rem;
-                left: 0;
-                width: 1rem;
-                height: 2px;
-                background-color: $black;
-                transform: rotate(32deg);
-            }
-        }
-        .my-name {
-            font-size: 7rem;
-            line-height: 110%;
-            letter-spacing: 2px;
-            font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            span {
-                letter-spacing: 15px;
-            }
-        }
-        .my-picture-container {
-            width: 30rem;
-            height: 40rem;
-            margin-top: -10rem;
-            background: $pink;
-            margin-left: 9vw;
-            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-            position: relative;
 
-            img {
-                width: 100%;
-                position: absolute;
-                bottom: 0;
+        @include mdm {
+            height: 55vh;
+        }
+    }
+    .me {
+        .jump1 {
+            margin: -13.5rem 3rem  13.5rem 3rem;
+
+            .about-item-menu {
+                @include smm {
+                    display: none;
+                }
             }
-        }
-        .biography-heading {
-            margin-top: 10vh;
-            margin-bottom: 1rem;
-            color: $pink;
-            font-size: 2rem;
-        }
-        .biography-text {
-            letter-spacing: 1px;
-            word-spacing: 1px;
-            font-size: 1.1rem;
-            line-height: 150%;
-            text-align: justify;
-        }
-        .numbered-links {
-            width: 100%;
-            font-size: 2rem;
-            margin-top: 15vh;
-            margin-left: 6.5vw;
-            list-style: none;
-            li {
-                display: block;
-                margin-bottom: 1rem;
+
+            .about-item-content {
+                .about-content-wrapper {
+                    display: none;
+
+                    &.active {
+                        display: block;
+                    }
+
+                    @include smm {
+                        display: block;
+                    }
+                }
+
+                .mobile-head-hijab {
+                    display: none;
+
+                    @include smm {
+                        display: block;
+                        display: block;
+                        margin: -6rem 0 auto;
+                        height: 10rem;
+                        padding: 0 6rem;
+                    }
+                }
+
+                @include smm {
+                    padding: 1rem 0 0 2rem;
+                }
+            }
+
+            .professional-titles {
+                color: white;
+                font-size: 1.5rem;
+                letter-spacing: 0.1rem;
+                word-spacing: 0.5rem;
+                position: relative;
+                &::before {
+                    content: ' ';
+                    position: absolute;
+                    top: -1rem;
+                    left: 0;
+                    width: 10rem;
+                    height: 2px;
+                    background: $black;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: -0.7rem;
+                    left: 0;
+                    width: 1rem;
+                    height: 2px;
+                    background-color: $black;
+                    transform: rotate(32deg);
+                }
+
+                @include mdm {
+                    font-size: 1rem;
+                    margin-bottom: 2rem;
+                    margin-top: 2.5rem;
+                }
+
+                @include smm {
+                    margin-bottom: 0rem;
+                    margin-top: 1rem;
+                }
+            }
+            .my-name {
+                font-size: 7rem;
+                line-height: 92%;
+                letter-spacing: 2px;
                 font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                .link-number {
-                    font-weight: 300;
-                    margin-right: 1rem;
-                    position: relative;
-                    margin-right: 7.5rem;
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        right: -6rem;
-                        top: 1.2rem;
-                        height: 2px;
-                        width: 5rem;
-                        background-color: $pink;
-                    }
+                span {
+                    letter-spacing: 15px;
                 }
-                .link-name {
-                    font-weight: 600;
-                    cursor: pointer;
-                    transition: $transition;
-                    &:hover, &.active {
-                        color: $pink;
-                    }
+
+                @include mdm {
+                    font-size: 5rem;
+                }
+                @include smm {
+                    font-size: 4.5rem;
+                    line-height: 83%;
                 }
             }
-        }
-        .col-md-6:first-child {
-            font-family: 'Hind', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        .section-info {
-            position: absolute;
-            transform: rotate(90deg);
-            right: -1rem;
-            bottom: -32vh;
-            letter-spacing: 2px;
-            font-size: 1.4rem;
-            font-weight: 300;
+            .my-picture-container {
+                height: 100%;
+                margin-top: -10rem;
+                background: $pink;
+                margin-left: 9vw;
+                box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+                position: relative;
+    
+                img {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                @include mdm {
+                    height: 40%;
+                    margin-top: 0rem;
+                    margin-left: 1vw;
+                }
+            }
+            .biography-heading {
+                margin-top: 10vh;
+                margin-bottom: 1rem;
+                color: $pink;
+                font-size: 2rem;
+                text-transform: uppercase;
+            }
+            .biography-text {
+                letter-spacing: 1px;
+                word-spacing: 1px;
+                font-size: 1.1rem;
+                line-height: 150%;
+                text-align: justify;
+            }
+            .numbered-links {
+                width: 100%;
+                font-size: 2rem;
+                margin-top: 15vh;
+                margin-left: 6.5vw;
+                list-style: none;
+                li {
+                    display: block;
+                    margin-bottom: 1rem;
+                    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    .link-number {
+                        font-weight: 300;
+                        margin-right: 1rem;
+                        position: relative;
+                        margin-right: 7.5rem;
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            right: -6rem;
+                            top: 1.2rem;
+                            height: 2px;
+                            width: 5rem;
+                            background-color: $pink;
+
+                            @include mdm {
+                                right: -3rem;
+                                width: 2rem;
+                                top: 1rem;
+                            }
+                        }
+
+                        @include mdm {
+                            margin-right: 4rem;
+                        }
+                    }
+                    .link-name {
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: $transition;
+                        &:hover, &.active {
+                            color: $pink;
+                        }
+                    }
+                }
+
+                @include mdm {
+                    margin-top: 7vh;
+                    margin-left: -3.5vw;
+                    font-size: 1.6rem;
+                }
+            }
+            .col-md-6:first-child {
+                font-family: 'Hind', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .section-info {
+                position: absolute;
+                transform: rotate(90deg);
+                right: -1rem;
+                bottom: -32vh;
+                letter-spacing: 2px;
+                font-size: 1.4rem;
+                font-weight: 300;
+
+                @include mdm {
+                    bottom: 0vh;
+                }
+
+                @include smm {
+                    right: -2rem;
+                }
+            }
+
+            @include mdm {
+                margin: -13.5rem 3rem 0rem 3rem;
+            }
+
+            @include smm {
+                margin: -13.5rem 3rem 0rem 0rem;
+            }
         }
     }
 
@@ -139,161 +238,22 @@
 
         .section-info {
             position: absolute;
-            left: 0rem;
-            top: 40%;
+            left: -1rem;
+            top: 50%;
             transform: rotate(-90deg);
             letter-spacing: 2px;
             font-size: 1.4rem;
             font-weight: 300;
-        }
-
-        .peek-box {
-            width: 100%;
-            min-height: 25rem;
-            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-            position: relative;
-            &, * {
-                transition: all ease-in-out .3s;
-            }
             
-            &.active-box {border: 1px solid $pink;}
-
-            .cats {
-                position: absolute;
-                left: -30vw;
-                display: flex;
-                flex-direction: column;
-                height: 25rem;
-                justify-content: space-evenly;
-                li.cat {
-                    list-style: none;
-                    text-align: left;
-                    border: 1px solid;
-                    padding: 10px 1rem;
-                    border-radius: 4px;
-                    text-transform: uppercase;
-                    position: relative;
-                    cursor: pointer;
-
-                    &.active {
-                        border-width: 1px;
-                    }
-
-                    &:hover {
-                        color: $pink;
-                    }
-
-                    &.active, &:hover {
-                        border-color: $pink;
-                        
-                        &:after {
-                            height: 0px;
-                        }
-
-                        &:before {
-                            width: 125%;
-                            background: $pink;
-                        }
-                    }
-
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        left: 12vw;
-                        top: 50%;
-                        height: 1px;
-                        width: 125%;
-                        background: #E0E0E0;
-                    }
-
-                    &:before {
-                        content: '';
-                        position: absolute;
-                        left: 12vw;
-                        top: 50%;
-                        height: 2px;
-                        width: 0;
-                        transition: all ease-in-out .3s;
-                        background: #E0E0E0;
-                    }
-                }
+            @include mdm {
+                top: 30%;
             }
 
-            &:after {
-                height: 100%;
-                width: 1px;
-                background: #E0E0E0;
-                content: '';
-                position: absolute;
-                left: 49.8%;
-                top: 0;
+            @include smm {
+                left: -2rem;
+                top: 18%;
             }
 
-            .peeks {
-                padding: 1rem;
-                position: relative;
-
-                .peek {
-                    display: flex;
-                    justify-content: space-between;
-                    flex-direction: column;
-                    .peek-image {
-                        height: 10rem;
-                        width: 100%;
-                        object-fit: cover;
-                        margin-bottom: 0.8rem;
-                        filter: grayscale(1);
-
-                        &:hover {
-                            filter: grayscale(0);
-                        }
-                    }
-                    .peek-text {
-                        font-size: 1rem;
-                        text-align: center;
-                        font-weight: 700;
-                        text-transform: capitalize;
-                        font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                        line-height: 1.5;
-                    }
-                    .peek-sneak {
-                        font-size: 0.9rem;
-                        font-weight: 500;
-                        text-align: center;
-                    }
-                    .peek-post-time {
-                        font-size: 0.8rem;
-                        color: grey;
-                        text-align: center;
-                        font-style: italic;
-                        font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                    }
-                    .more {
-                        display: block;
-                        text-align: right;
-                        font-weight: 100;
-                        position: relative;
-                        cursor: pointer;
-
-                        &:hover {
-                            color: $pink;
-                            &:after {
-                                background: $pink;
-                            }
-                        }
-
-                        &:after {
-                            content: '';
-                            position: absolute;
-                            bottom: 0;
-                            background: #E0E0E0;
-                            right: 0;
-                            width: 4.5rem;
-                            height: 1px;
-                        }
-                    }
-                }
-            }
         }
 
         .visit-blog {
@@ -310,6 +270,145 @@
             &:hover {
                 text-decoration: none;
                 border: 2px solid;
+            }
+        }
+
+        .blog-peek-categories {
+            .cats {
+                display: flex;
+                justify-content: space-evenly;
+                margin-left: -2.5rem;
+                overflow-x: scroll;
+
+                @include mdm {
+                    margin-left: -2.3rem;
+                }
+
+                @include smm {
+                    justify-content: flex-start;
+                }
+            }
+
+            .cats__item {
+                list-style: none;
+                text-align: left;
+                border: 1px solid;
+                padding: 10px 1rem;
+                border-radius: 4px;
+                text-transform: uppercase;
+                flex-shrink: 0;
+                cursor: pointer;
+
+                &.active {
+                    border-width: 1px;
+                }
+    
+                &:hover {
+                    color: $pink;
+                }
+
+                &.active, &:hover {
+                    border-color: $pink;
+                }
+
+                @include smm {
+                    margin: 0 1rem auto;
+                }
+            }
+        }
+
+        .blog-peek-category-posts {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 4rem auto;
+            flex-wrap: nowrap;
+
+            @include smm {
+                flex-wrap: wrap;
+                margin: 2rem 2rem auto;
+            }
+
+            @include mdm {
+                flex-wrap: wrap;
+            }
+        }
+
+        .blog-peek-category__post {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin: 1rem;
+            padding: 1rem;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+            .peek-image {
+                height: 10rem;
+                width: 100%;
+                object-fit: cover;
+                margin-bottom: 0.8rem;
+                filter: grayscale(1);
+
+                &:hover {
+                    filter: grayscale(0);
+                }
+            }
+
+            .peek-text {
+                font-size: 1rem;
+                text-align: center;
+                font-weight: 700;
+                text-transform: capitalize;
+                font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                line-height: 1.5;
+
+                @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+            }
+
+            .peek-sneak {
+                font-size: 0.9rem;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            .peek-post-time {
+                font-size: 0.8rem;
+                color: grey;
+                text-align: center;
+                font-style: italic;
+                font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+
+            .more {
+                display: block;
+                text-align: right;
+                font-weight: 100;
+                position: relative;
+                cursor: pointer;
+
+                &:hover {
+                    color: $pink;
+                    &:after {
+                        background: $pink;
+                    }
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    background: #E0E0E0;
+                    right: 0;
+                    width: 4.5rem;
+                    height: 1px;
+                }
+            }
+            
+            @include mdm {
+                flex-basis: 45%;
+            }
+
+            @include smm {
+                flex-basis: 100%;
             }
         }
     }

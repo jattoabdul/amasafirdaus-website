@@ -65,7 +65,7 @@ class Blog extends Component {
                         </InputGroup>
                         <InputGroup className="search-filter">
                             <Label for="search">Search</Label>
-                            <Input className="search-input" placeholder="search" name="search" id="search" />
+                            <Input className="search-input" placeholder="Search" name="search" id="search" />
                         </InputGroup>
                     </div>
                     <div className="blog-posts-list-container">
@@ -77,7 +77,8 @@ class Blog extends Component {
                                         <span className="post-category">Design &amp; UI</span>
                                         <span className="post-time">April 16, 2000</span>
                                     </p>
-                                    <p className="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere id. Dignissimos odit esse quisquam sint accusamus quod molestiae ad corrupti neque laboriosam culpa architecto commodi, optio illo temporibus reprehenderit</p>
+                                    <p className="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere id. Dignissimos odit esse quisquam sint accusamus quod
+                                    olor sit amet consectetur adipisicing elit. Debitis, facere id. Dignissimos odit esse quisquam sint accusamus quod</p>
                                     <a href="/blog/content" className="more-content">read more</a>
                                 </div>
                                 <div className="blog-pic">

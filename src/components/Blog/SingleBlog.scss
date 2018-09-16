@@ -19,16 +19,14 @@
         min-height: 50vh;
         color: $black;
         background-color: $offwhite;
-        
-        width: 70%;
+        // width: 70%;
         margin: 2rem auto;
-        min-width: 65rem;
         position: relative;
 
         .share {
             position: sticky;
             width: 5rem;
-            left: -10vw;
+            left: 5vw;
             top: 30vh;
             margin-left: -10rem;
 
@@ -53,10 +51,21 @@
                     filter: saturate(0.8) invert(0.8);
                 }
             }
+
+            @include mdm {
+                left: 0vw;
+                top: 50vh;
+            }
+
+            @include smm {
+                display: none;
+            }
         }
 
         .blog-content {
             padding: 2rem 1rem;
+            margin-top: -7rem;
+
             .post-time {
                 font-size: 0.85rem;
                 color: $greymain;
@@ -72,18 +81,31 @@
             .post-title {
                 text-align: center;
                 font-size: 3rem;
-                width: 70%;
-                min-width: 30rem;
+                padding: 0 6rem;
                 margin: auto;
+
+                @include mdm {
+                    padding: 0 2rem;
+                }
             }
 
             .post-summary {
                 text-align: center;
-                width: 70%;
-                min-width: 30rem;
+                padding: 0 10rem;
                 margin: 2rem auto;
                 color: $greymain;
                 font-size: 1rem;
+
+                @include mdm {
+                    padding: 0 5rem;
+                }
+
+                @include smm {
+                    padding: 0 1rem;
+                    line-height: 1.5em;
+                    height: 3em;
+                    overflow: hidden;
+                }
             }
 
             .post-author {
@@ -116,6 +138,10 @@
                         }
                         margin: 0;
                     }
+                }
+
+                @include smm {
+                    padding: 0 2rem;
                 }
             }
 
@@ -159,12 +185,15 @@
                     object-fit: cover;
                     object-position: top center;
                 }
+
+                @include mdm {
+                    padding: 1rem 8%;
+                }
             }
 
             .end-of-post {
-                width: 70%;
-                min-width: 30rem;
-                margin: 2rem auto;
+                margin: 0 10rem auto;
+
                 .dots {
                     text-align: center;
                     letter-spacing: 1rem;
@@ -180,9 +209,19 @@
                         font-weight: 300;
                         color: $greymain;
                         font-size: 0.9rem;
+
+                        @include smm {
+                            font-size: 0.7rem;
+
+                            span[role='img'] {
+                                display: none;
+                            }
+                        }
                     }
                 }
                 .post-actions {
+                    display: flex;
+
                     .shares, .views {
                         display: inline-block;
                         margin-right: 1rem;
@@ -194,8 +233,45 @@
                             padding-left: 0.5rem;
                         }
                     }
+
+                    .shares {
+                        .share-mobile-pop-over {
+                            display: none;
+                        }
+
+                        @include smm {
+                            cursor: pointer;
+
+                            .share-mobile-pop-over {
+                                &.active {
+                                    color: red;
+                                }
+                            }
+                        }
+                    }
+
+                    @include smm {
+                        justify-content: space-between;
+                    }
+                }
+
+                @include mdm {
+                    margin: 0 4rem auto;
+                }
+
+                @include smm {
+                    margin: 2rem auto;
                 }
             }
+
+            @include mdm {
+                margin-top: -5rem;
+            }
+        }
+
+        @include mdm {
+            // width: 100%;
+            margin: 4rem auto;
         }
     }
 }

@@ -29,6 +29,15 @@
 
             .contact-text {
                 font-size: 1.5rem;
+
+                @include mdm {
+                    font-size: 1rem;
+                }
+
+                @include smm {
+                    font-size: 1rem;
+                    padding: 0 1rem;
+                }
             }
         }
     }
@@ -153,6 +162,30 @@
                         }
                     }
                 }
+
+                @include mdm {
+                    text-align: center;
+
+                    .socials {
+                        margin-left: 4rem;
+                    }
+                }
+
+                @include smm {
+                    text-align: center;
+
+                    .socials {
+                        margin-left: 4rem;
+                    }
+                }
+            }
+
+            @include mdm {
+                flex-direction: column;
+            }
+
+            @include smm {
+                flex-direction: column;
             }
         }
     }

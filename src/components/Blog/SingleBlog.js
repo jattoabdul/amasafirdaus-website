@@ -101,6 +101,12 @@ class SingleBlog extends Component {
                                 <div className="shares" title="shares">
                                     <img src={shareIcon} alt="shares"/>
                                     <span>2,349</span>
+                                    <div className="share-mobile-pop-over active">
+                                        <ul>
+                                            <li>Share on Facebook</li>
+                                            <li>Share on Twitter</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
