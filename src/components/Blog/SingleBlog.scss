@@ -218,6 +218,10 @@
                             }
                         }
                     }
+
+                    @include smm {
+                        text-align: center;
+                    }
                 }
                 .post-actions {
                     display: flex;
@@ -237,14 +241,78 @@
                     .shares {
                         .share-mobile-pop-over {
                             display: none;
+                            position: relative;
                         }
 
                         @include smm {
                             cursor: pointer;
 
                             .share-mobile-pop-over {
+                                position: absolute;
+                                right: 2rem;
+                                margin-top: .5rem;
+                                padding: .5rem;
+
+                                .s-m-pop-over-box {
+                                    position: relative;
+                                    box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 0 1px rgba(0,0,0,.35);
+                                    box-sizing: border-box;
+                                    border-radius: 3px;
+                                    background: #fff;
+                                    max-width: 240px;
+
+                                    &:before {
+                                        content: ' ';
+                                        content: "";
+                                        position: absolute;
+                                        width: 0;
+                                        height: 0;
+                                        margin-left: -0.5em;
+                                        top: 0em;
+                                        left: 85%;
+                                        box-sizing: border-box;
+                                        border: 0.5em solid $black;
+                                        border-color: transparent transparent $white $white;
+                                        transform-origin: 0 0;
+                                        transform: rotate(135deg);
+                                        box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.05);
+                                    }
+
+                                    .share-mobile-link-container {
+                                        margin-bottom: 0;
+                                        padding-left: 0;
+                                        margin-top: -0.5em;
+                                        list-style: none;
+                                        list-style-image: none;
+                                        z-index: 900;
+                                        text-align: center;
+                                        pointer-events: auto;
+                                    }
+    
+                                    .share-mobile-link-item {
+                                        padding: 0.5rem 1rem;
+                                        display: block;
+                                        box-sizing: border-box;
+                                        border: 0;
+                                        text-align: left;
+                                        width: 100%;
+                                        line-height: 1.4;
+                                        white-space: nowrap;
+
+                                        &:first-child {
+                                            padding-bottom: 0;
+                                        }
+
+                                        span, .social-share-mobile {
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+
+
                                 &.active {
-                                    color: red;
+                                    display: block;
+                                    visibility: visible;
                                 }
                             }
                         }
@@ -270,7 +338,6 @@
         }
 
         @include mdm {
-            // width: 100%;
             margin: 4rem auto;
         }
     }
