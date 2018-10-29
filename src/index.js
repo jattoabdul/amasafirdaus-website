@@ -24,7 +24,8 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 const store = configureStore();
-axios.defaults.baseURL = 'http://localhost:7000/api/v1';
+// axios.defaults.baseURL = 'http://localhost:7000/api/v1';
+axios.defaults.baseURL = 'https://firdausamasablogapi.herokuapp.com/api/v1';
 
 const app = document.getElementById('root');
 const history = createBrowserHistory();
