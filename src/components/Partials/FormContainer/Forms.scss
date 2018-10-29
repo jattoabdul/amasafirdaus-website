@@ -1,1 +1,13 @@
 @import '../../../globals/styles/base';
+
+.form-container {
+    .add-post-form {
+        .form-group {
+            margin: 1rem auto 0;
+
+            select[name='categories'] {
+                width: 12rem;
+            }
+        }
+    }
+}

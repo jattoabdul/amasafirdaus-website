@@ -28,8 +28,8 @@ export function getBlogPeekFail(errorfetchingBlogPeek) {
 export const fetchBlogPeek = () => async(dispatch) => {
     dispatch(getBlogPeek());
     try {
-        const response = await axios.get('/blog-peek');
-        dispatch(getBlogPeekSuccess(response.data.payload));
+        const response = await axios.get('/posts/peeks');
+        dispatch(getBlogPeekSuccess(response.data.blogPeek));
       } catch (error) {
         dispatch(getBlogPeekFail(error));
       }

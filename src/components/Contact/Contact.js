@@ -17,16 +17,17 @@ import {
     Row,
     Col
 } from 'reactstrap';
-// import {
-//     fetchBlogPeek
-//   } from '../../actions/homeAction';
+import {
+    subscribeUser
+  } from '../../actions/contactAction';
 
 class Contact extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isNavDropdownOpen: false
+            isNavDropdownOpen: false,
+            email: ''
         };
     }
 
@@ -36,13 +37,25 @@ class Contact extends Component {
         });
     }
 
+    handleSubscribeInput = (event) => {
+        this.setState({ email: event.target.value });
+    }
+
+    handleSubscribeSubmit = () => {
+        const email =this.state.email;
+        this.props.subscribeUser(email);
+        this.setState({ email: '' });
+    }
+
+
     render() {
-    
+        const { isNavDropdownOpen, email } = this.state;
+        
         return [
-            <div className="Contact">
+            <div key={'contact-content'} className="Contact">
                 <header>
                     <Navigation
-                        isOpen={this.state.isNavDropdownOpen}
+                        isOpen={isNavDropdownOpen}
                         toggle={this.toggleHamburgerNav}
                     />
                     <div className="header-contents">
@@ -58,7 +71,7 @@ class Contact extends Component {
                                     <Row>
                                         <Col md="12">
                                             <h4 className="contact-form-head">Send Me a Message <span><img src={expressMail} alt="express mail sending"/></span></h4>
-                                            <Form row>
+                                            <Form row="true">
                                                 <Row>
                                                     <Col sm="6">
                                                         <FormGroup>
@@ -118,17 +131,22 @@ class Contact extends Component {
                     </Row>
                 </section>
             </div>,
-            <Footer />
+            <Footer key={'footer'} email={email} handleSubscribeInput={this.handleSubscribeInput} handleSubscribeSubmit={this.handleSubscribeSubmit}/>
         ];
     }
 }
 
-const mapStateToProps = state => ({
-    ...state
-})
+const mapStateToProps = state => {
+    return {
+        // subscribe actions states
+        successPostingSubscriber: state.contactReducer.successPostingSubscriber,
+        errorPostingSubscriber: state.contactReducer.errorPostingSubscriber,
+        isPostingSubscriber: state.contactReducer.isPostingSubscriber
+    }
+}
 
 const mapDispatchToProps = {
-    // fetchBlogPeek
+    subscribeUser
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

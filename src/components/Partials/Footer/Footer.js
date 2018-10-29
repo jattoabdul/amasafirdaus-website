@@ -45,8 +45,8 @@ const Footer = props => {
                         <Form className="subscribe-form">
                             <FormGroup>
                                 <InputGroup>
-                                    <Input placeholder="email" type="email" className="subscribe-input" required />
-                                    <InputGroupAddon addonType="append"><Button className="subscribe-btn" type="submit">Subscribe</Button></InputGroupAddon>
+                                    <Input placeholder="email" type="email" className="subscribe-input" value={props.email} onChange={props.handleSubscribeInput} required />
+                                    <InputGroupAddon addonType="append"><Button className="subscribe-btn" onClick={props.handleSubscribeSubmit} type="submit">Subscribe</Button></InputGroupAddon>
                                 </InputGroup>
                             </FormGroup>
                         </Form>

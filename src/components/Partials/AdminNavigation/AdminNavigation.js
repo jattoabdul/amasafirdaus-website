@@ -8,12 +8,12 @@ import {
     NavItem,
     NavLink
 } from 'reactstrap';
-import './BlogNavigation.scss';
+import './AdminNavigation.scss';
 
 
-const BlogNavigation = props => {
+const AdminNavigation = props => {
     return (
-        <div className="BlogNavigation">
+        <div className="AdminNavigation">
             <Navbar className="top-nav" light expand="md">
                 <NavbarBrand href="/">
                     <div className="navigation-logo">Firdaus</div>
@@ -22,13 +22,10 @@ const BlogNavigation = props => {
                 <Collapse isOpen={props.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink href="/">Amasa Firdaus</NavLink>
+                            <NavLink href="/admin/dashboard">Admin Dashboard</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/blog">Blog & Stories</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/contact">Contact Me</NavLink>
+                            <NavLink href="/blog">View Blog</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
@@ -37,4 +34,4 @@ const BlogNavigation = props => {
     );
 }
 
-export default BlogNavigation;
+export default AdminNavigation;

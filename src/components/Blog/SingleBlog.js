@@ -1,32 +1,29 @@
 import React, { Component } from 'react';
-// import { Link, withRouter } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Moment from 'react-moment';
 import './SingleBlog.scss';
 import { BlogNavigation } from '../Partials/BlogNavigation';
 import { Footer } from '../Partials/Footer';
 import hijabPink from '../../assets/hijabPink.svg'
-import roughPic from '../../assets/rough.jpeg'
 import shareIcon from '../../assets/share.svg'
 import viewIcon from '../../assets/view.svg'
 import facebookCircular from '../../assets/facebook-circular.svg';
 import twitterCircular from '../../assets/twitter-circular.svg';
-// import {
-//     Container,
-//     Row,
-//     Col
-// } from 'reactstrap';
 
-// import {
-//     fetchBlogPeek
-//   } from '../../actions/homeAction';
+import {
+    fetchBlogPost
+  } from '../../actions/blogAction';
+  import {
+    subscribeUser
+  } from '../../actions/contactAction';
 
 class SingleBlog extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isNavDropdownOpen: false
+            isNavDropdownOpen: false,
+            email: ''
         };
     }
 
@@ -36,10 +33,32 @@ class SingleBlog extends Component {
         });
     }
 
+    handleSubscribeInput = (event) => {
+        this.setState({ email: event.target.value });
+    }
+
+    handleSubscribeSubmit = () => {
+        const email =this.state.email;
+        this.props.subscribeUser(email);
+        this.setState({ email: '' });
+    }
+
+    componentDidMount() {
+        const { id } = this.props.match.params;
+        this.props.fetchBlogPost(id);
+    }
+
     render() {
-    
+        const {
+            blogPost,
+            // errorfetchingBlogPost,
+            isFetchingBlogPost
+        } = this.props
+
+        const { email } = this.state;
+
         return [
-            <div className="SingleBlog">
+            <div key={'single-blog-content'} className="SingleBlog">
                 <header>
                     <BlogNavigation
                         isOpen={this.state.isNavDropdownOpen}
@@ -52,86 +71,83 @@ class SingleBlog extends Component {
                         <img className="social-share" src={facebookCircular} alt="share to facebook"/>
                         <img className="social-share" src={twitterCircular} alt="share to twitter"/>
                     </div>
-                    
-                    <div className="blog-content">
-                        <p className="post-time">
-                            <span>Oct 19, 2016</span>
-                            <span>10:59 pm</span>
-                        </p>
-                        <h4 className="post-title">Wireframing and Prototyping: Present, Past, and Future</h4>
-                        <p className="post-summary">By learning a small amount of tech skills, you as a non-technical startup founder, can support your company in smaller ways. Here&rsquo;s our list of Need-to-know Technical skills</p>
-                        <div className="post-author">
-                            <img className="author-pic" src={hijabPink} alt="Firdaus Amasa Avatar"/>
-                            <div className="author-info">
-                                <p className="name">Firdaus Amasa</p>
-                                <p className="titles">Muslimah | Barrister | Writer</p>
-                            </div>
-                        </div>
-                        <div className="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quia nisi maxime repellat nesciunt explicabo reiciendis incidunt suscipit sunt praesentium, ipsa natus quis, optio est? Aut adipisci sed pariatur veritatis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga ipsa repellendus quisquam odit minus, eveniet expedita? Rem odit tenetur ipsa dolor doloribus numquam dignissimos magni maxime, nihil neque. Exercitationem, magnam.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, accusamus doloremque aut asperiores beatae velit sit ex voluptatum sapiente nam harum molestiae, natus rerum, voluptas tempora laborum temporibus reiciendis debitis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequatur odit cupiditate qui ipsum? Quia voluptate nam quos laboriosam voluptatem deserunt expedita. Laudantium consequatur quidem aliquam et reiciendis, modi aspernatur.</p>
-                            <ol>
-                                <h4><li>Wireframing</li></h4>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, minus quod quam necessitatibus fugiat, ea, harum autem officia delectus quae quia numquam iste qui ut perspiciatis sint rem ipsam facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, in aut. Voluptatem assumenda, tempora consectetur quis commodi obcaecati, molestias omnis dolor dolore recusandae veritatis natus architecto numquam temporibus iure labore.</p>
-                                <blockquote>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia fugiat molestiae exercitationem saepe, facilis mollitia, eos nisi laborum libero laboriosam placeat debitis? Laborum ad officiis quis dolorum vel ratione eius
-                                </blockquote>
-                            </ol>
-                            <img src={roughPic} alt="Rough"/>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe qui maxime id at facilis. Reiciendis repellat, maiores rem numquam totam velit hic ratione sit quibusdam possimus eligendi cum aspernatur! Deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit pariatur consectetur animi ad ipsum sed explicabo at. Doloremque, provident quas eveniet accusamus reiciendis exercitationem necessitatibus! Perspiciatis ab dicta praesentium. Enim</p>
-                            <blockquote>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia fugiat molestiae exercitationem saepe, facilis mollitia, eos nisi laborum libero laboriosam placeat debitis? Laborum ad officiis quis dolorum vel ratione eius
-                            </blockquote>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe qui maxime id at facilis. Reiciendis repellat, maiores rem numquam totam velit hic ratione sit quibusdam possimus eligendi cum aspernatur! Deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit pariatur consectetur animi ad ipsum sed explicabo at. Doloremque, provident quas eveniet accusamus reiciendis exercitationem necessitatibus! Perspiciatis ab dicta praesentium. Enim</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe qui maxime id at facilis. Reiciendis repellat, maiores rem numquam totam velit hic ratione sit quibusdam possimus eligendi cum aspernatur! Deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit pariatur consectetur animi ad ipsum sed explicabo at. Doloremque, provident quas eveniet accusamus reiciendis exercitationem necessitatibus! Perspiciatis ab dicta praesentium. Enim</p>
-                            <img src={roughPic} alt="Rough"/>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe qui maxime id at facilis. Reiciendis repellat, maiores rem numquam totam velit hic ratione sit quibusdam possimus eligendi cum aspernatur! Deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit pariatur consectetur animi ad ipsum sed explicabo at. Doloremque, provident quas eveniet accusamus reiciendis exercitationem necessitatibus! Perspiciatis ab dicta praesentium. Enim</p>
-                        </div>
-                        <div className="end-of-post">
-                            <p className="dots">....</p>
-                            <p className="may-like">
-                                <span className="ibeere">Do you like this article?</span>
-                                <span className="imoran">Share it with your friends <span role="img" aria-label="hug">🤗</span></span>
+                    {isFetchingBlogPost ? <div className="blog-content loader">Loading....</div> : 
+                        <div className="blog-content">
+                            <p className="post-time">
+                                <span><Moment format="MMM D, YYYY" withTitle>
+                                {blogPost.publishedAt}
+                            </Moment></span>
+                                <span><Moment format="HH:mm A" withTitle>
+                                {blogPost.publishedAt}
+                            </Moment></span>
                             </p>
-                            <div className="post-actions">
-                                <div className="views" title="views">
-                                    <img src={viewIcon} alt="views"/>
-                                    <span>8,031</span>
+                            <h4 className="post-title">{blogPost.title}</h4>
+                            <p className="post-summary">{blogPost.desc}</p>
+                            <div className="post-author">
+                                <img className="author-pic" src={hijabPink} alt="Firdaus Amasa Avatar"/>
+                                <div className="author-info">
+                                    <p className="name">{blogPost.User && blogPost.User.Profile.firstName} {blogPost.User && blogPost.User.Profile.lastName}</p>
+                                    <p className="titles">Muslimah | Barrister | Writer</p>
                                 </div>
-                                <div className="shares" title="shares">
-                                    <img src={shareIcon} alt="shares"/>
-                                    <span>2,349</span>
-                                    <div className="share-mobile-pop-over active">
-                                        <div className="s-m-pop-over-box">
-                                            <ul className="share-mobile-link-container">
-                                                <li className="share-mobile-link-item">
-                                                    <img className="social-share-mobile" src={facebookCircular} alt="share to facebook"/>
-                                                    <span>Share on Facebook</span>
-                                                </li>
-                                                <li className="share-mobile-link-item">
-                                                    <img className="social-share-mobile" src={twitterCircular} alt="share to twitter"/>
-                                                    <span>Share on Twitter</span>
-                                                </li>
-                                            </ul>
+                            </div>
+                            <div className="post-body">
+                                <div dangerouslySetInnerHTML={{__html: blogPost.content}}></div>
+                            </div>
+                            <div className="end-of-post">
+                                <p className="dots">....</p>
+                                <p className="may-like">
+                                    <span className="ibeere">Do you like this article?</span>
+                                    <span className="imoran">Share it with your friends <span role="img" aria-label="hug">🤗</span></span>
+                                </p>
+                                <div className="post-actions">
+                                    <div className="views" title="views">
+                                        <img src={viewIcon} alt="views"/>
+                                        <span>{blogPost.readBy && blogPost.readBy.length}</span>
+                                    </div>
+                                    <div className="shares" title="shares">
+                                        <img src={shareIcon} alt="shares"/>
+                                        <span>0</span>
+                                        <div className="share-mobile-pop-over active">
+                                            <div className="s-m-pop-over-box">
+                                                <ul className="share-mobile-link-container">
+                                                    <li className="share-mobile-link-item">
+                                                        <img className="social-share-mobile" src={facebookCircular} alt="share to facebook"/>
+                                                        <span>Share on Facebook</span>
+                                                    </li>
+                                                    <li className="share-mobile-link-item">
+                                                        <img className="social-share-mobile" src={twitterCircular} alt="share to twitter"/>
+                                                        <span>Share on Twitter</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 </section>
             </div>,
-            <Footer />
+            <Footer key={'footer'} email={email} handleSubscribeInput={this.handleSubscribeInput} handleSubscribeSubmit={this.handleSubscribeSubmit} />
         ];
     }
 }
 
-const mapStateToProps = state => ({
-    ...state
-})
+const mapStateToProps = state => {
+    return {
+        isFetchingBlogPost: state.blogReducer.isFetchingBlogPost,
+        errorfetchingBlogPost: state.blogReducer.errorfetchingBlogPost,
+        blogPost: state.blogReducer.blogPost,
+        // subscribe actions states
+        successPostingSubscriber: state.contactReducer.successPostingSubscriber,
+        errorPostingSubscriber: state.contactReducer.errorPostingSubscriber,
+        isPostingSubscriber: state.contactReducer.isPostingSubscriber
+    }
+}
 
 const mapDispatchToProps = {
-    // fetchBlogPeek
+    fetchBlogPost,
+    subscribeUser
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleBlog);

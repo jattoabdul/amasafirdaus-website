@@ -1,0 +1,10 @@
+@import '../../../globals/styles/base';
+
+.modal-dialog {
+    .modal-footer {
+        .btn-primary {
+            background-color: $pink;
+            border-color: $pink;
+        }
+    }
+}
