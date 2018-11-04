@@ -139,9 +139,9 @@ class Home extends Component {
                     {isFetchingBlogPeek ? <p>blog peeks loading...</p> :
                         <BlogPeekTabs defaultActiveTabIndex={0}>
                             {Object.keys(blogPeek).map((key, value) => (
-                                <BlogPeekTab categoryName={key} linkClassName={'cats__item'}>
+                                <BlogPeekTab categoryName={key} key={key} linkClassName={'cats__item'}>
                                 {blogPeek[`${key}`].map((post) => (
-                                    <BlogPeekTabContent post={post} postImage={lawBook}/>
+                                    <BlogPeekTabContent post={post} key={key} postImage={lawBook}/>
                                     )
                                     )}
                                 </BlogPeekTab>
