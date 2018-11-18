@@ -244,7 +244,12 @@
             .table {
                 text-align: center;
                 table-layout: fixed;
-                width: 100%;
+                // width: 100%;
+                border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                width: fit-content;
+                max-width: 100%;
 
                 tr {
                     word-wrap: break-word;
