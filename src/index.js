@@ -24,8 +24,14 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 const store = configureStore();
-// axios.defaults.baseURL = 'http://localhost:7000/api/v1';
-axios.defaults.baseURL = 'https://firdausamasablogapi.herokuapp.com/api/v1';
+
+if (process.env.NODE_ENV === 'production') {
+    axios.defaults.baseURL = 'https://firdausamasablogapi.herokuapp.com/api/v1';
+} else {
+    axios.defaults.baseURL = 'http://localhost:7000/api/v1';
+}
+
+// axios.defaults.baseURL = process.env.BLOG_API_URL;
 
 const app = document.getElementById('root');
 const history = createBrowserHistory();

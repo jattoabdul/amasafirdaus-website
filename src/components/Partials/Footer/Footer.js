@@ -24,7 +24,7 @@ const Footer = props => {
                 <Row>
                     <Col xs="12" sm="6" md="4" lg="3" className="main">
                         <span className="brand-logo">Firdaus</span>
-                        <p className="titles">Muslimah | Barrister | Writer</p>
+                        <p className="titles">Muslimah | Writer | Activist | Lawyer | Enterpreneur</p>
                         <p className="contacts">
                             <span>me@firdausamasa.com</span>
                             <span>Jannahfir@gmail.com</span>
@@ -51,9 +51,15 @@ const Footer = props => {
                             </FormGroup>
                         </Form>
                         <ul className="socials">
-                            <li><a><img src={facebookSVG} alt="" /></a></li>
-                            <li><a><img src={instagramSVG} alt="" /></a></li>
-                            <li><a><img src={twitterSVG} alt="" /></a></li>
+                            <li>
+                                <a href="https://www.facebook.com/firdausa.amasa.3"><img src={facebookSVG} alt="facebook" /></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/amasafirdaus"><img src={instagramSVG} alt="instagram" /></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/Amasa_Firdausa"><img src={twitterSVG} alt="twitter" /></a>
+                            </li>
                         </ul>
                     </Col>
                     <Col xs="12" sm="6" md="4" lg="3" className="hijab-on-footer">

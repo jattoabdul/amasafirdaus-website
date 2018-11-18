@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const BlogPeekTabContent = (props) => {
     const getOrdinalNum = (n) => {
@@ -15,14 +16,16 @@ export const BlogPeekTabContent = (props) => {
         return `${day} <sup>${getOrdinalNum(day)}</sup> ${monthNames[d.getMonth()]}, ${d.getFullYear()}`;
     }
 
+    const postSlug = props.post.title.replace(/\s+/g, '-').toLowerCase();
+
     return (
         <div className="blog-peek-category__post">
-            <img className="peek-image" src={props.thumbnailUrl} alt=""/>
+            <img className="peek-image" src={props.post.thumbnailUrl || props.postImage} alt=""/>
             <h4 className="peek-text">{props.post.title}</h4>
             <p className="peek-sneak">{props.post.desc}</p>
             <p className="peek-post-time" dangerouslySetInnerHTML={{ __html: formatDate(props.post.publishedAt) }}></p>
             <span className="more">
-                Read more
+                <Link to={`/blog/${props.post.id}/${postSlug}`}>Read more</Link>
             </span>
         </div>
     )

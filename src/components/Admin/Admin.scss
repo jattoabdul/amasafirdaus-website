@@ -283,7 +283,8 @@
                 }
 
                 @include mdm {
-                    
+                    width: auto;
+                    overflow-x: auto;
                 }
             }
 
@@ -294,6 +295,18 @@
 
                 li {
                     display: list-item;
+
+                    &.disabled {
+                        a {
+                            color: $greyscale;
+                        }
+                    }
+        
+                    &.active {
+                        a {
+                            color: $cyan;
+                        }
+                    }
 
                     &:first-child a {
                         margin-left: 0;
@@ -317,6 +330,11 @@
                         color: $pink;
                         background-color: $white;
                         border: 1px solid $greyscale;
+                        outline: none;
+
+                        &:hover {
+                            color: $greyscale;
+                        }
                     }
                 }
 

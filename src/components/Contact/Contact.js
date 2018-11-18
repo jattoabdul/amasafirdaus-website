@@ -76,13 +76,13 @@ class Contact extends Component {
                                                     <Col sm="6">
                                                         <FormGroup>
                                                             <Label for="name">Your Name</Label>
-                                                            <Input type="text" id="name" placeholder="e.g James Ada" />
+                                                            <Input type="text" id="name" placeholder="e.g Abdullah John" />
                                                         </FormGroup>
                                                     </Col>
                                                     <Col sm="6">
                                                         <FormGroup>
                                                             <Label for="email">Email Address</Label>
-                                                            <Input type="email" id="email" placeholder="e.g james@gmail.com" />
+                                                            <Input type="email" id="email" placeholder="e.g abdullah@gmail.com" />
                                                         </FormGroup>
                                                     </Col>
                                                 </Row>
@@ -117,13 +117,14 @@ class Contact extends Component {
                                 </div>
                                 <div className="contact-info">
                                     <h4>Contact Information</h4>
+                                    <p className="contact-detail"><span role="img" aria-label="email">📧</span> me@firdausamasa.com</p>
                                     <p className="contact-detail"><span role="img" aria-label="email">📧</span> Jannahfir@gmail.com</p>
                                     <p className="contact-detail"><span role="img" aria-label="email">📧</span> amasafirdausa@gmail.com</p>
                                     <p className="contact-detail"><span role="img" aria-label="phone">📞</span> (+234) 803-827-9779</p>
                                     <ul className="socials">
-                                        <li><a><img src={facebookSVG} alt="facebook" /></a></li>
-                                        <li><a><img src={instagramSVG} alt="instagram" /></a></li>
-                                        <li><a><img src={twitterSVG} alt="twitter" /></a></li>
+                                        <li><a href="https://www.facebook.com/firdausa.amasa.3"><img src={facebookSVG} alt="facebook" /></a></li>
+                                        <li><a href="https://www.instagram.com/amasafirdaus"><img src={instagramSVG} alt="instagram" /></a></li>
+                                        <li><a href="https://twitter.com/Amasa_Firdausa"><img src={twitterSVG} alt="twitter" /></a></li>
                                     </ul>
                                 </div>
                             </div>

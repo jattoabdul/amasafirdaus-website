@@ -51,12 +51,15 @@ const AddPostForm = (props) => {
                     <Input type="file" name="thumbnailUrl" id="thumbnailUrl" value={props.thumbnailUrl} onChange={props.onUpload} accept="image/*" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="categories" hidden>Location</Label>
+                    <Label for="categories">Post Categories <br />
+                    <sub>Hold ctrl/cmd to select multiple categories</sub>
+                    </Label>
                     <Input type="select" name="categories" id="categories"     onChange={props.onMultiSelect} multiple>
                         {props.categories && props.categories.map((category, key) =>
                         <option value={`${category.id}`} key={key}>{category.name}</option>)}
                     </Input>
                 </FormGroup>
+                <br />
                 <FormGroup check>
                     <Label for="published" check>
                         <Input type="checkbox" name="published" id="published" value={props.published} onChange={props.onCheckBox} />{' '}

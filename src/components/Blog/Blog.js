@@ -72,6 +72,13 @@ class Blog extends Component {
         this.setState({ email: '' });
     }
 
+    gotoPostDetail = (post) => {
+        const postSlug = post.title.replace(/\s+/g, '-').toLowerCase();
+        let path = `/blog/${post.id}/${postSlug}`;
+
+        this.props.history.push(path);
+    }
+
     componentDidMount() {
         this.props.fetchBlogPosts();
         this.props.fetchCategories();
@@ -106,7 +113,7 @@ class Blog extends Component {
             return (
                 <div className="blog-post" key={key}>
                     <div className="blog-content">
-                        <h4 className="post-title">{post.title}</h4>
+                        <h4 className="post-title" onClick={() => this.gotoPostDetail(post)}>{post.title}</h4>
                         <p>
                             <span className="post-category">{post.Categories.map((c) => c.name).join(', ')}</span>
                             <span className="post-time">
@@ -119,7 +126,7 @@ class Blog extends Component {
                         <Link to={`/blog/${post.id}/${postSlug}`} className="more-content">read more</Link>
                     </div>
                     <div className="blog-pic">
-                        <img src={ post.thumbnailUrl || roughPic} alt="Rough"/>
+                        <img src={ post.thumbnailUrl || roughPic } alt="Rough"/>
                     </div>
                 </div>
             );

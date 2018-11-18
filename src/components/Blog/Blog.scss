@@ -140,6 +140,18 @@
         li {
             display: list-item;
 
+            &.disabled {
+                a {
+                    color: $greyscale;
+                }
+            }
+
+            &.active {
+                a {
+                    color: $cyan;
+                }
+            }
+
             &:first-child a {
                 margin-left: 0;
                 border-top-left-radius: .25rem;
@@ -162,7 +174,16 @@
                 color: $pink;
                 background-color: $white;
                 border: 1px solid $greyscale;
+                outline: none;
+
+                &:hover {
+                    color: $greyscale;
+                }
             }
+        }
+
+        @include mdm {
+            padding-left: 1rem;
         }
 
     }
@@ -184,6 +205,10 @@
                 .post-title {
                     cursor: pointer;
                     font-size: 1.5rem;
+
+                    &:hover {
+                        color: $pink;
+                    }
 
                     @include mdm {
                         font-size: 1.2rem;

@@ -63,9 +63,9 @@
 
             .professional-titles {
                 color: white;
-                font-size: 1.5rem;
+                font-size: 1rem;
                 letter-spacing: 0.1rem;
-                word-spacing: 0.5rem;
+                word-spacing: 0.1rem;
                 position: relative;
                 &::before {
                     content: ' ';
@@ -116,7 +116,7 @@
                 }
             }
             .my-picture-container {
-                height: 100%;
+                height: 25%;
                 margin-top: -10rem;
                 background: $pink;
                 margin-left: 9vw;
@@ -130,7 +130,7 @@
                 }
 
                 @include mdm {
-                    height: 40%;
+                    height: 15%;
                     margin-top: 0rem;
                     margin-left: 1vw;
                 }
@@ -368,7 +368,7 @@
             .peek-sneak {
                 font-size: 0.9rem;
                 font-weight: 500;
-                text-align: center;
+                text-align: justify;
             }
 
             .peek-post-time {
@@ -385,6 +385,10 @@
                 font-weight: 100;
                 position: relative;
                 cursor: pointer;
+
+                a {
+                    text-decoration: none;
+                }
 
                 &:hover {
                     color: $pink;

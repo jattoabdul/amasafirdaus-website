@@ -149,9 +149,17 @@ class Admin extends Component {
         categories = categories.map(function (cat) { 
             return parseInt(cat, 10); 
           }).join(',');
-        published = published.toString();
 
-        this.props.createNewBlogPost({ title, desc, content, published, thumbnailUrl, categories });
+        let isPublished = undefined;
+        if (published === true) {
+            isPublished = published.toString();
+        } else if (published === false) {
+            isPublished = published.toString();
+        } else {
+            isPublished = 'false'
+        }
+
+        this.props.createNewBlogPost({ title, desc, content, published: isPublished, thumbnailUrl, categories });
         this.toggle('');
     }
 
@@ -172,6 +180,8 @@ class Admin extends Component {
             isPublished = published.toString();
         } else if (published === false) {
             isPublished = published.toString();
+        } else {
+            isPublished = 'false'
         }
 
         this.props.handleUpdateBlogPost(post.id, { title, desc, content, published: isPublished, thumbnailUrl, categories });

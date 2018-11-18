@@ -28,9 +28,17 @@
     
             .titles {
                 line-height: 3;
+                font-size: 0.8rem;
+                font-weight: bold;
 
                 @include smm {
-                    font-size: 1.6rem;
+                    line-height: 2.5;
+                    font-size: 1rem;
+                }
+
+                @include mdm {
+                    line-height: 3;
+                    font-size: 0.5rem;
                 }
             }
 
@@ -42,6 +50,10 @@
 
                 @include smm {
                     font-size: 1.2rem;
+                }
+
+                @include mdm {
+                    font-size: 1rem;
                 }
             }
 

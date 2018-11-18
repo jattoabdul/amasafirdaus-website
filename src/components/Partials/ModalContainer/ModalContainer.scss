@@ -1,6 +1,8 @@
 @import '../../../globals/styles/base';
 
 .modal-dialog {
+    max-width: 100%;
+
     .modal-footer {
         .btn-primary {
             background-color: $pink;
