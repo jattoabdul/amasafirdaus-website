@@ -1,14 +1,21 @@
 /* COLOURS */
-$andela-blue: #3359DE;
-$light-andela-blue: #4549c261;
-$lighter-andela-blue: #4549c2cf;
-$andela-grey: #525252;
-$andela-grey-light: #6c757d;
-$andela-border-grey-light: #b5afaf69;
-$andela-grey-text: #949292;
-$andela-white: #ffffff;
-$andela-black: #000000;
+
+/* HEX */
+$offwhite: #fbfbfb;
+$indigo: #1c2b68;
+$greyscale: #eee;
+$greymain: #808080;
+$pink-fade: #ea526fb3;
+$head-bg-color: #776b6b91;
 $search-input-border-color: #ced4da;
+
+/* RGB */
+$pink: rgba(234, 82, 111, 1);
+$cream: rgba(247, 247, 255, 1);
+$cyan: rgba(35, 181, 211, 1);
+$black: rgba(0, 0, 0, 1);
+$white: rgba(255, 255, 255, 1);
+
 $andela-black-rgba: rgba(0, 0, 0, 0.3);
 $andela-boxshadow-rgba-black: rgba(199,218,255,0.5);
 
@@ -21,3 +28,6 @@ $screen-sm-max: 767px; /* small phones & large smartphones max limit */
 $screen-md-min: 768px; /* Small tablets (portrait view) */
 $screen-lg-min: 992px; /* Tablets and small desktops */
 $screen-xl-min: 1200px; /* Large tablets and desktops */
+
+
+$transition: ease-in-out all .3s;

@@ -1,5 +1,7 @@
 @import 'globals/styles/base';
 
 #root {
-    height: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }

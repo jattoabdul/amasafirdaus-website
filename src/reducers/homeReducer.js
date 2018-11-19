@@ -4,7 +4,7 @@ import {
   GET_BLOG_PEEK_FAIL } from '../constants';
 
 const initialState = {
-  blogPeek: [],
+  blogPeek: {},
   isFetchingBlogPeek: false,
   errorfetchingBlogPeek: {},
 };

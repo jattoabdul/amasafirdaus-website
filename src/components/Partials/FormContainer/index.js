@@ -1,5 +1,5 @@
-// import AddGuestForm from './AddGuestForm';
-// import AddTagNoForm from './AddTagNoForm';
-// import UpdateTimeoutForm from './UpdateTimeoutForm';
+import AddPostForm from './AddPostForm';
+import UpdatePostForm from './UpdatePostForm';
+import DeletePostForm from './DeletePostForm';
 
-// export { AddGuestForm, AddTagNoForm, UpdateTimeoutForm };
+export { AddPostForm, UpdatePostForm, DeletePostForm };

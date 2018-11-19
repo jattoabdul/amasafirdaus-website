@@ -1,0 +1,347 @@
+@import '../../globals/styles/base';
+
+.SingleBlog {
+    color: $black;
+    flex: 1 0 auto;
+    margin: 0 0 -5rem 0;
+
+    &:after {
+        content: "";
+        display: block;
+        height: 5rem;
+    }
+
+    header {
+
+    }
+}
+
+.single-blog-post {
+    min-height: 50vh;
+    color: $black;
+    background-color: $offwhite;
+    // width: 70%;
+    margin: 2rem auto;
+    position: relative;
+
+    .share {
+        position: sticky;
+        width: 5rem;
+        left: 5vw;
+        top: 30vh;
+        margin-left: -10rem;
+
+        .heading {
+            font-size: 0.85rem;
+            color: $greymain;
+            text-align: center;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .social-share {
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+            transition: all ease-in-out .3s;
+            display: block;
+            margin: 0 auto;
+            padding:  0.5rem 0;
+
+            &:hover {
+                filter: saturate(0.8) invert(0.8);
+            }
+        }
+
+        @include mdm {
+            left: 0vw;
+            top: 50vh;
+        }
+
+        @include smm {
+            display: none;
+        }
+    }
+
+    .blog-content {
+        padding: 2rem 1rem;
+        margin-top: -7rem;
+
+        .post-time {
+            font-size: 0.85rem;
+            color: $greymain;
+            text-align: center;
+            margin: 1rem 0.5rem; 
+            text-transform: uppercase;
+
+            span {
+                margin-right: 0.5rem;
+            }
+        }
+
+        .post-title {
+            text-align: center;
+            font-size: 3rem;
+            padding: 0 6rem;
+            margin: auto;
+
+            @include mdm {
+                padding: 0 2rem;
+            }
+        }
+
+        .post-summary {
+            text-align: center;
+            padding: 0 10rem;
+            margin: 2rem auto;
+            color: $greymain;
+            font-size: 1rem;
+
+            @include mdm {
+                padding: 0 5rem;
+            }
+
+            @include smm {
+                padding: 0 1rem;
+                line-height: 1.5em;
+                height: 3em;
+                overflow: hidden;
+            }
+        }
+
+        .post-author {
+            margin: 1rem auto 5rem;
+            display: flex;
+            width: 20rem;
+
+            .author-pic {
+                transform: rotateY(180deg);
+                width: 3rem;
+                height: 3rem;
+                padding: 5px;
+                border-radius: 50%;
+                border: $pink solid 1px;
+            }
+
+            .author-info {
+                display: flex;
+                flex-direction: column;
+                margin-left: 1rem;
+                height: 3rem;
+                justify-content: space-evenly;
+
+                p {
+                    &.name {
+                        color: $pink;
+                    }
+                    &.titles {
+                        color: $greymain;
+                    }
+                    margin: 0;
+                }
+            }
+
+            @include smm {
+                padding: 0 2rem;
+            }
+        }
+
+        .post-body {
+            padding: 1rem 15%;
+
+            p:first-child:first-letter {
+                color: $pink;
+                float: left;
+                font-family: Georgia;
+                font-size: 75px;
+                line-height: 60px;
+                padding-top: 4px;
+                padding-right: 8px;
+                padding-left: 3px;
+            }
+
+            blockquote {
+                margin: 0 0 1rem;
+                padding: 0 4rem;
+                text-align: justify;
+                font-style: italic;
+                color: $cyan;
+                position: relative;
+                font-size: 1.2rem;
+
+                &:before {
+                    position: absolute;
+                    content: '"';
+                    left: 2rem;
+                    top: -1rem;
+                    font-family: cursive;
+                    font-size: 3rem;
+                }
+            }
+
+            div img {
+                width: 100%;
+                max-height: 20rem;
+                margin: 2rem 0 1rem;
+                object-fit: cover;
+                object-position: top center;
+            }
+
+            @include mdm {
+                padding: 1rem 8%;
+            }
+        }
+
+        .end-of-post {
+            margin: 0 10rem auto;
+
+            .dots {
+                text-align: center;
+                letter-spacing: 1rem;
+                font-size: 1.3rem;
+                font-weight: 500;
+                margin-bottom: 3rem;
+            }
+            .may-like {
+                text-align: center;
+
+                .ibeere {
+                    margin-right: 0.5rem;
+                }
+                .imoran {
+                    font-weight: 300;
+                    color: $greymain;
+                    font-size: 0.9rem;
+
+                    @include smm {
+                        font-size: 0.7rem;
+
+                        span[role='img'] {
+                            display: none;
+                        }
+                    }
+                }
+
+                @include smm {
+                    text-align: center;
+                }
+            }
+            .post-actions {
+                display: flex;
+                justify-content: center;
+
+                .shares, .views {
+                    display: inline-block;
+                    margin-right: 1rem;
+                    img {
+                        width: 1rem;
+                        margin-top: -4px;
+                    }
+                    span {
+                        padding-left: 0.5rem;
+                    }
+                }
+
+                .shares {
+                    .share-mobile-pop-over {
+                        display: none;
+                        position: relative;
+                    }
+
+                    @include smm {
+                        cursor: pointer;
+
+                        .share-mobile-pop-over {
+                            position: absolute;
+                            right: 2rem;
+                            margin-top: .5rem;
+                            padding: .5rem;
+
+                            .s-m-pop-over-box {
+                                position: relative;
+                                box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 0 1px rgba(0,0,0,.35);
+                                box-sizing: border-box;
+                                border-radius: 3px;
+                                background: #fff;
+                                max-width: 240px;
+
+                                &:before {
+                                    content: ' ';
+                                    content: "";
+                                    position: absolute;
+                                    width: 0;
+                                    height: 0;
+                                    margin-left: -0.5em;
+                                    top: 0em;
+                                    left: 85%;
+                                    box-sizing: border-box;
+                                    border: 0.5em solid $black;
+                                    border-color: transparent transparent $white $white;
+                                    transform-origin: 0 0;
+                                    transform: rotate(135deg);
+                                    box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.05);
+                                }
+
+                                .share-mobile-link-container {
+                                    margin-bottom: 0;
+                                    padding-left: 0;
+                                    margin-top: -0.5em;
+                                    list-style: none;
+                                    list-style-image: none;
+                                    z-index: 900;
+                                    text-align: center;
+                                    pointer-events: auto;
+                                }
+
+                                .share-mobile-link-item {
+                                    padding: 0.5rem 1rem;
+                                    display: block;
+                                    box-sizing: border-box;
+                                    border: 0;
+                                    text-align: left;
+                                    width: 100%;
+                                    line-height: 1.4;
+                                    white-space: nowrap;
+
+                                    &:first-child {
+                                        padding-bottom: 0;
+                                    }
+
+                                    span, .social-share-mobile {
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+
+
+                            &.active {
+                                display: block;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+
+                @include smm {
+                    justify-content: space-between;
+                }
+            }
+
+            @include mdm {
+                margin: 0 4rem auto;
+            }
+
+            @include smm {
+                margin: 2rem auto;
+            }
+        }
+
+        @include mdm {
+            margin-top: -5rem;
+        }
+    }
+
+    @include mdm {
+        margin: 4rem auto;
+    }
+}
