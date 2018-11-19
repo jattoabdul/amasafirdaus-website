@@ -9,8 +9,9 @@ const configureStore = (initialState =>
     initialState,
     compose(
       applyMiddleware(thunk),
-      process.env.NODE_ENV !== 'production' ? window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() : null
     )
   ));
 
 export default configureStore;
+
+// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
