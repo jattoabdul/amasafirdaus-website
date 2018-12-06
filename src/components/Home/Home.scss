@@ -34,9 +34,14 @@
             .about-item-content {
                 .about-content-wrapper {
                     display: none;
-
+                    
                     &.active {
                         display: block;
+                    }
+                    
+                    .content-details {
+                        max-height: 30rem;
+                        overflow-y: auto;
                     }
 
                     @include smm {
@@ -116,7 +121,7 @@
                 }
             }
             .my-picture-container {
-                height: 25%;
+                height: 60%;
                 margin-top: -10rem;
                 background: $pink;
                 margin-left: 9vw;
