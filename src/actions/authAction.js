@@ -63,8 +63,10 @@ export const onLoginUser = (identifier, password) => async(dispatch) => {
         const token = response.data.token;
         const decodedToken = jwt.decode(token);
         dispatch(setCurrentUser(decodedToken));
+        return decodedToken;
       } catch (error) {
         dispatch(loginUserFail(error));
+        return error;
       }
 }
 

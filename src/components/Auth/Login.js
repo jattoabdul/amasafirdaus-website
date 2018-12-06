@@ -24,14 +24,18 @@ class Login extends Component {
     };
   }
 
-  handleLogin = (event) => {
+  handleLogin = async(event) => {
     event.preventDefault();
     let { identifier, password } = this.state;
 
     identifier = identifier.trim();
     password = password.trim();
 
-    this.props.onLoginUser(identifier, password);
+    const loggedIn = await this.props.onLoginUser(identifier, password);
+    if (loggedIn.access === 'auth') {
+      // redirecting
+      this.props.history.push('/admin/dashboard');
+    }
   }
 
   handleInputChange = (event) => {
@@ -41,7 +45,6 @@ class Login extends Component {
   componentWillReceiveProps(nextProps) {
     const { isAuthenticated, history } = nextProps;
     if (isAuthenticated)
-      // TODO: clear state for identifier, password
       this.setState({ 
         identifier: '',
         password: ''
